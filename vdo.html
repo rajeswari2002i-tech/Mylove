@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Moments 🎬💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: white;
+}
+/* BODY BASE */
+body {
+  margin: 0;
+  background: #0f0f0f;
+  position: relative;
+}
+
+/* NEON BORDER */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 12px;
+
+  border: 5px solid #fa0505;
+
+  /* NEON GLOW */
+  box-shadow:
+    0 0 5px #fa0505,
+    0 0 10px #fa0505,
+    0 0 20px #fa0505,
+    0 0 40px #fa0505,
+    0 0 80px #fa0505,
+    inset 0 0 10px #fa0505;
+
+  animation: neonPulse 2s infinite alternate;
+}
+
+/* PULSE EFFECT */
+@keyframes neonPulse {
+  from {
+    opacity: 0.7;
+    box-shadow:
+      0 0 5px #fa0505,
+      0 0 10px #fa0505,
+      0 0 20px #fa0505;
+  }
+  to {
+    opacity: 1;
+    box-shadow:
+      0 0 10px #fa0505,
+      0 0 20px #fa0505,
+      0 0 40px #fa0505,
+      0 0 80px #fa0505,
+      0 0 120px #fa0505;
+  }
+}
+/* NEON BORDER FIX */
+body::before {
+  content: "";
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+
+  pointer-events: none;
+  z-index: 9999;
+  border-radius: 15px;
+
+  border: 2px solid #fa0505;
+
+  /* STRONG OUTER GLOW */
+  box-shadow:
+    0 0 10px #fa0505,
+    0 0 20px #fa0505,
+    0 0 40px #fa0505,
+    0 0 80px rgba(241, 2, 2, 0.8),
+    0 0 120px rgba(248, 8, 40, 0.6);
+
+  animation: neonPulse 2s ease-in-out infinite alternate;
+}
+
+/* PULSE */
+@keyframes neonPulse {
+  from {
+    box-shadow:
+      0 0 5px #fa0505,
+      0 0 15px #fa0505,
+      0 0 30px #fa0505;
+  }
+  to {
+    box-shadow:
+      0 0 20px #fa0505,
+      0 0 40px #fa0505,
+      0 0 80px #fa0505,
+      0 0 140px rgba(245, 7, 19, 0.9);
+  }
+}
+/* MAIN CONTAINER */
+.wrapper {
+  padding: 60px 80px;
+}
+
+/* EACH ROW */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 80px;
+}
+
+/* REVERSE ROW */
+.row.reverse {
+  flex-direction: row-reverse;
+}
+
+/* VIDEO STYLE */
+video {
+  width: 35%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  transition: 0.3s;
+}
+
+video:hover {
+  transform: scale(1.05);
+}
+
+/* TEXT CONTENT */
+.content {
+  width: 50%;
+}
+
+.content h2 {
+  font-family: 'Playfair Display';
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.content p {
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* FADE IN ANIMATION */
+.row {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.row.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .row {
+    flex-direction: column;
+  }
+  .row.reverse {
+    flex-direction: column;
+  }
+  video, .content {
+    width: 100%;
+  }
+}
+.continue-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: linear-gradient(45deg, #ff4d6d, #ff85a2);
+  color: white;
+  padding: 12px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 14px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.continue-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(255, 77, 109, 0.6);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- ROW 1 -->
+  <div class="row">
+    <video controls>
+      <source src="videos/vdo1.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Where It All Began 💫</h2>
+      <p>
+        Frst nama each other paathu kitathey marikar la vachu the mmah..apo na nenaikala ne the enoda entire happy world nu
+        Apo antha tym la ona ore place la wrk panunom daily each other paathupom..Ne crt ah 3rd of OCT join panuna abee mah, enoda bday ku crt ah nxt day
+        athu than na una paatha frst day and neeyum tha mah..frst starting la ne ena paapiya ilaya nu enaku crt ah guess pana mudiyala coz some times you saw some other tyms yu dont saw
+        then the days went..una pakurathukea na keela varuvn abee mah..en appa irupaga but athlm mean kooda panama una paaka ne inaiku vanthurukiya nu pakkave na keela varuvn mah
+        keela una ne irukuratha paatha face la oru happiness vanthurum..chinatha oru smile manasula..aprm ne oru tym neega enga padichega paatha pola iruku nu keta apo na face ah paathu ans panunen
+        Then days pochu neeyum ena pakuratha feel panunen...then ne enata number keta athu wrk visiyama iruthalum unkita kita cl varapo face la oru smile
+        Then na santha kumar pesuren nu slurapo un voice ah ketapo oru butterfly moment aachu🦋🌼Then 2023 diwali i think tahst is 14th of NOV..Apo tha frst ne enaku txt panuna abee mah..Hi neega inaiku leave ahh..
+        nanum ama neegalum leave ah keten then aprm vanthu status ku reply panirutha mah...aprm aniku nyt la iruthu nama chat start aaga aachu..antha day la iruthu Mrng✨ and Gn✨ to till this date la abee mah..no changes in this
+        Aprm apdiyea day and nyt chats and cls la pochu..then enaku un mela oru frdship crush feel thandi serthu travel pananum nu aasa vanthuchu..unata share panunen..unakum ena pidikum nu enaku nalave ne feel kudutha mah...Then it continued too..frst date🤌🙂‍↕️
+
+      </p>
+    </div>
+  </div>
+
+  <!-- ROW 2 -->
+  <div class="row reverse">
+    <video controls>
+      <source src="videos/vdo2.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>I Luv You🤍</h2>
+      <p>
+       The first time we met… I didn’t know you would become my entire world.  
+        That moment stole my heart..14 FEB,2024 marakave mudiyatha oru visiyatha na unkita iruthu un voice la keten..that is Luv u mahh🤍🫂Ne yepo un manasara enkita sluvanu ethir paathu iruthen abee mah
+        athey pola neeyum enata unoda luv ah share panuna..at that tym im the happiest grl in my era nu solalam..
+        some tyms nama late nyt cls or txt panurapo ketpn..Mah nama luv relation ku move aagalma..then you get slient coz of some reasons then u explained to me..after That
+        neeyea en aasa padi enkita vanthu un luv ah na aasa pata pola sona abee mah..then we met on 24 FEB,2024..that is our frst date end with frst kiss💋..Frst tym nama serthu onna iruthu pesi luv share pani food feed pani ethra naal nama phn and txt la pesuna visiyatha neir la feel panura oru day kedachu
+        Antha frst day na unkita clse ah utkanthu un theighs ah hold pani kiten then u get shyed for frst tym..I remember those feel🙂‍↕️
+        Ethu elm en lfy la ethoo ipo tha nadantha maari iruku aana athula 3 yrs run aaitu mah speed ah..
+        Yet evlo tha days ponalum frst meet panuna day ah oru naalum marakka mudiyathu abee mah...Luv u soo much abee mah to become my entire world💋🤍🫂
+      </p>
+    </div>
+  </div>
+
+  <!-- ROW 3 -->
+  <div class="row">
+    <video controls>
+      <source src="videos/vdo3.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>How It To Be Continued🤗</h2>
+      <p>
+        After our luv journey started every small small moment create a endless memories till to date abee mah..
+        from that everything feels special when I’m with you 💕Aprm frequent ah meet panika start panikitom..most of tym cafe,restaurent, kovil poi namakaga pray panika start panikitiom
+        veliya serthu poi neraiya ftsos eduthukitom neraiya memory create panikitiom..frst tym kovil poitu park lunch pona moments la inum alaga oruma iruku abee mah..unkooda serthu pray panitu serthu each other antha moment ah devotional ah feel panitu
+        then ena drp panuna..ethula nenaikurapo yethoo ipo the nadantha maari iruku abee mah..Apo la neraiya late nyt cls and txt  panipom..pesitu irutha thokm varave seiyathu..neraiya pesikitom..ore luv u tha..kiss tha..koodave kuty kuty fights um tha..mrng elubanum nu theriyum aanalum nyt iruthu late nyt cls pesipom
+        frst yea una Mahh nu koopda start panunen..aprm day poga poga unakunu mattum unique aana wrd ah feel pana start panunen..Abee mah abee mah abee mah nu aasaiya koopda start panunen neeyum en prethi mah preethi mah nu aasaiya koopduva
+        2du pperum neraiya feelings share panikitom..like luv..romance..lust..kiss..hug..emotiom..fights..happiness..ups..dwns..relax..apdi ela feeling um..for 6 months...
+        Entha 6 months enoda lfy la best moments nu fee panura alavuku unkooda serthu spend panunen abee mah..🙂‍↕️💋🤍
+      </p>
+    </div>
+  </div>
+
+  <!-- ROW 4 -->
+  <div class="row reverse">
+    <video controls>
+      <source src="videos/vdo4.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Distance makes Us Stronger🥲🫂</h2>
+      <p>
+        6 months nama aasa patta pola rmb ah alaga spend aachu..after this 6 months..nama konjam kooda ethir pakatha oru visiyam nama lfy la cross aachu..antha maari patta visiyatha nama oru nal kooda pesikitathu kooda kedaiyathu
+        but oru lfy ooda point la namaku oru tight ah na situation create aachu namaku..nama unexpect panatha oru situation..each other evlo serthu meet pani iruthomo athuku elm opps ah aagura maari oru situation
+        each other meet pana mudiyama pesika mudiyama epdi irukom nu kooda theriyama en side ena situation kooda unaku theriyatha alavuku gap aaitu namakula..
+        Antha tym una rmb ah miss panunen mah..ena vda ne ena rmb ah miss panirupa miss panunathu mattum ilama na epdi irukn nu rrmb vum feel panirupa
+        Antha toughtest ah nenaikurapo yepi ethalm kadanthu 2du perum vanthom nu nenaika thoonuthu ipo..
+        Ena tha toughtest tym ah iruthalum ne enakunu iruka un luv ah via un mes la na feel panunen..ne daily enkita pesura pola each day enaku mes panirutha mah..
+        Na atha oru late nyt eduthu pakurapo nalla emotional aaiten mah..na mes ah pakura oru 1 or 2 hrs ku muna the enaku oru mes um poturutha..
+        Then ne ena evlo thedura evlo miss panura nu na understand panikiten then nanum unaku mes poten..athuku aprm clg xam ku varapo unaku cl pani pesipn
+        apo cls ku porapo cl pani pesipen unkita apdi athula oru 6 months pochu..6 months ona 6 months distance la totally 1 yr epdi spend aachu
+        Entha 1 yr la nama each other luv feel panunatha vda missing ah feel panunom 2 du perum..Entha distance la iruthalm antha distance nama relationship ah inum stronger aakichu
+        nama bonding and luv inum increase aachu namakula ula mis understannding cmy aagi each other understand pnaika start panunom..Antha moment nama relation ah inum strong ah build pana oru reason ah iruthu nu na hope panuren abee mah🤍💋🫂
+      </p>
+    </div>
+  </div>
+
+   
+  
+  <div class="row">
+    <video controls>
+      <source src="videos/vdo5.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>After 1 yr 🤍</h2>
+      <p>
+        After thsese distance slowly diminishes and one day after all this toughest tym we met together
+        Apo nama face panuna feelings ah share pnikitom na unoda feelaiyum ne enoda feelaiyum understand panikitom
+        then slowly we went out to spend tym together..We went for beach, park..nama pirichu irutha days pathi pesi share panipom..aprm nama future,,v2 la accept panipagala nxt step ena
+        nxt v2 la epdi eduthupga..unakum v2la sola mudiyatha oru situation epdi neraiya visiyam pesipom..neraiya questions namaku iruthu ethlm pesipom
+        athey samayam enatha questions manasula iruthalum each other luv share pani memories create panikitom.
+        manasula sangadam questions doubts future carreer apdi ela side um pressure ah iruthuchu..ena iruthalum nama meet pani pesipom
+        unga v2la accept panipagala nu unaku neraiya questions iruthu enkita oru tym ne emotional aana enaku athu inum nalla oruma iruku beach la vachu
+        apo na sone hope my words abee mah elm nala padiya nadakum apdi nu..so ipo atha nenachu pakurapo unmaiya na sona wrds ku artam iruku nu feel panuvn abee mah
+        neraiya emotional ah nama staring stage of relationship laiyea face panunom..atha apop kastama iruthalum ipo nenaikurapo athum oru stage thats make our relation strong nu thoonum abee mah
+        Luv u soo much en chlmmm🤍🫂💋
+      </p>
+    </div>
+  </div>
+
+  <div class="row reverse">
+    <video controls>
+      <source src="videos/vdo6.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Our Prayer comes True🙂‍↕️</h2>
+      <p>
+        After 1yr its goes good..aprm nama serthu meet panuna aprm luv anniversary kovil poi celebrate panunom..v2 la accepet panuvagala? panuvagala? apdi nu oru questions iruthute iruthu
+        Aana na una purichukama una rmb ah kasta paduthiten enaku ipo nenachalum yn nu iruku..una epdi kasata padutha enaku manasu vanthu nu nenaika thoonuthu
+        una rmb ah mentally kasta padutiten..apovum ne ena vitu pogala..ne enaku neraiya lfy ku reality ah ula visiyam elm soli kudutha
+        en v2la enaku soli uduka mudiyatha visiyagal kooda ne enaku soli kudutha..neraiya visiyam enakunu soli kudutha
+        en nalathuku nu neraiya visiyam en lfy ku soli kudutha..apo la iruthu  ipo vara en mind la thoonura oru visyam ena na abee mah
+        na una evlo kasta paduthitano atha vda una enkita vachu una rmn ah nalla paathukanum apdi nu thoona start aachu
+        unaku nalla oru wife ah iruthu una nalla pathukanum nu aasa paduren..oru toughtesttym ah unaku kuduthuten mah..im really sry for that🥹
+        sry sona kandipa heal aagura visiyam ila so na unkita iruthu una rmb alaga paathhu en luv naala atha heal pnanum nu nenaikn abee mah
+        en luv elm unaku mothama unakunu mattum kuduthhu enkita irukura elm feeling un ne mattuma irukanum nu nenaikuren abee mah
+        Then athey samayam enga v2laiyum theriya vanthu avagalum ena kooptu pesi nama relationship ku oky sonaga
+        nama ethir paathu pray panuna oru visiyam nandanthu..then neeyum one day un v2la appa amma ta pesuna avagalum namaku oky nu sonaga
+        2du v2 side laiyum oky nu accept panikitaga athl ipo nenaikurapo goosebumbs aaguthu abee mah🫂nama luv relationship nxt stage ku move aachu atahiyum nama serthu feel panunom
+        nama ena visiyam nadakanum nu rmb ah aasa patu prayer panunomo antha visiyam neraiya struggles, fight, distance ku aprm real aachu
+        antha oru moment ne enaku nu na feel panunen abee mah..nama distance la irukurapo ena suthi yarum iruthalum yarumea ilatha pola feel aachu
+        athuku aprm v2la accept panikita aprm enaku nu ne yepavum iruka nu feel aaga start aachu Abee mah..ipavum athey feel enaku thoonum abee mah
+        enakunu ne iruka apdi nu luv u abee mah🫂💋🤍
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <video controls>
+      <source src="videos/vdo7.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Togetherness🫂</h2>
+      <p>
+        V2 laiyum accept panikitaga..nama aasa patta pola unkooda oru lfy vazha poren nu daily nenachu excite aavn abee mah
+        aprm appa amma ne v2 ku vanthu pesuna moment la epavum maraka mudiyathu abee mah..entha nama ftos edukatalum 
+        antha day nenaikurapo memories apdi iruku abee mah kanukula..antha oru moment ku nama evlo naal wait panirupom nu namaku theriyum la abee mah
+        apo antha moment kanuku neir  la nadakurapo antha excitement la nenaikurapo alaga iruku abee mah
+        Then amma v2la pesunaga konjam wait panuga athuku aprm 2du perm aasa patta pola kalayam pani vaiklm..Yepova iruthalum eva dha enga v2 marumaga apdi nu sonaga
+        antha wrds ah ketkurapo antha happy feel ah enaku wrds la explain pna thrla mah..only to feel nu irukum abee mah..aprm elarum pesi last la nama relationship ku
+        arthama v2la elarutaiyum nama serthu couples ah blessing vangunom..antha feel ah 2du perum complete ah feel panunom
+        nama nxt atha cl la ena feel nu share panikitom..aprm appa poovu vangitu vanthuruthaga then antha poovu ah aasaiya eduthu vachukiten abee mah
+        enaku antha moments ah marakave mudiyathu mah..nama relationship ah nxt stage ku eduthutu pona moments mah athlm🤍🤗😊
+      </p>
+    </div>
+  </div>
+
+  <div class="row reverse">
+    <video controls>
+      <source src="videos/vdo8.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Understandings🥰</h2>
+      <p>
+        2du per v2 laiyum accept panikita aprm nama ine ona irukanum sanda potuka koodathu each other understanding ooda vistu kuduthuten
+        adjust pani ponum..ethunaalum lfy la share panikanum happyness,sad, ups, dwns ellam share panikanum nu pesikitom
+        nalla oru couples ah entha koraiyum ilama nall oru pair ah irukanum nama parents nama la pathi varutha padatha alavuku 
+        irukanum avaga namala nenachu yepavum sandhosa padura maari irukanum nu pesikitom la abee mah..athlm inum apdiyea oruma iruku mah
+        enakum ne neraiya visiyam nama lfy ku aprm enaku nu soli kuduthuruka..lfy ku needed ah na visyam soli kuduthuruka
+        matured ah ela visiyamum handle pananum china pila maari ela visiyathulaiyum iruka koodatha..namakula understanding inum build aaganum
+        aprm namakunu future aagurapo ena visiyagalla irukum athuku ipo la iruthu yepdi be ready ah irukanum dressing visiyam..apdi nu neraiya visiyam soli kuduthuruka
+        neraiya advice paniruka ne soli kuduthurura elm enaku nu understannd pani ketupn ena abee mah..ne enaku nu slura visyam elm na understand panipn
+        namakula vara kudiya china china sandaiya epdi seri panikanum apdi nu nama pesirukom..aanalum sanda nu ilama relationship irukathu..so namakulaiyum sanda varum pogum
+        aana luv still alive🤍namakula vara sandaiya enanu pesipom aprm athula iruthe namaku  solution pesipomm
+        epdi neraiya visiyal namakula share pani pesurapo enanu namake understand aagum then nama understanding and bonding
+        increase aagum la abee mah💋🫂nama ine ula days laiyum ela visiyamum share panikanum nu aasa paduren mah..ethutha athutha nu ila 
+        ethunaalum share paniklm..coz yure mine and na unoda preethi mah..so elmea inum nama future nad present la share panikanum
+        apo tha nama each other understanding ooda nalla oru bonding la future laiyum live pana helpfull ah irukum abee mah😊🤗ena unkita en abee mah vachu pakurathula avlo ishtam abee mah💋🤍
+
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <video controls>
+      <source src="videos/vdo9.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Sexy & Romantic Part</h2>
+      <p>
+        Abee mah..Frst nama stay panurapo complete ah full pana mudiyala but unoda bday ku stay paniruthom la mah
+        10th of OCT so aniku unoda bday that spl day la nama stay paniruthom..then we both feels satisfied on that day
+        frst ne ena  clg la iruthu pick panunathula iruthu enaku unoda mood feel aachu..aprm food vangitu nama room ponom
+        nama mood evlo hype ah iruthuna antha spl day la ftos kooda edukama avlo mood la involve aaitom la mah😊💋
+        then frst unoda mela utkandu shrt ah remove pani una paathu rasichu una lips kita slow ah vanthu un lips ah taste pan start panunen athey samayam ne enoda back ah
+        hold pani mood ooda kiss pana start panuna abee mah💋🤌nalla hype ah aprm dress la remove pani fsrt insert panura neram na un mela utkandu methuva utkandu aprm ulla ne insert panuna abee mah
+        enatha frst insert aagurapo pain iruthalum vazhiooda serthu oru sugamum iruthu abee mah..na atha complete ah feel panunen abee mah
+        aprm un meela utkandu ups dwns panurapo nalla mood aachu mah..then na unaku shake pani suck pana start panunen..apo
+        suck apni continue va fast  ah shake panurapo unoda mood out of ctrl aagi ne preethi mah nu sound pota ahhahaann nu sound pota mah
+        enaku athu nalla feel aachu apo enaku una inum pananum pola iruthu panu ne mood la bed ooda oru side ooda sanjuta atha pakurapo enaku out of ctrl aaitu mah then athey hype 
+        la unaku shake pani taste pani athey mood la un avanthu kiss panune mah awww nu iruthu chlm..then poitu wash panitu ena 
+        un mel ooda serthu kaal kai potu paduthu pesitu iruthom la mah..aprm afternoon serthu saptom..ne enaku luv ooda oru oru vaaiya feed pani kudutha mah
+        nanum una paathutu una touch paniteea samatha saptn aprm neeyum saptitu hand wash  panitu then en mela ne paduthu irutha mah chest  ooda serthu un face ah vachu
+        paduthu aprm enaku rub pani vitu moood ooda figure insert pani lick pana start panuna..mood la enaku paduthu irukave mudiyala
+        then en mela paduthu insert pana start panuna abee mah...aprm un bdy ah complete ah en mela loose vitu paduthu apdiyea speed ah insert panitea irutha abee mah🥵🫠💋🤌
+        melt aagiten abee mah antha feel la aprm complete ah 2du perum antha day satisfied aagi nalla oru vibe ooda ena drop panuna...nama yepo stay panitu
+        return varapvum enku una vdave manasu varathu abee mah..unkita iruthute irukanum nu aasaiay irukum abee mah...neraiya tyms
+        stay panirukom oru oru tym um satisfied aagi return aagurapo antha feelaiyea thani abee mah..luv u soo much abee mah💋I'm addicted to you mah💋🤍
+      </p>
+    </div>
+  </div>
+
+  <div class="row reverse">
+    <video controls>
+      <source src="videos/vdo10.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Dream🤍</h2>
+      <p>
+      Nama aasa padura maari oru lfy ah complete ah feel Pani live pananum una nalla paathukanum unaku pidichathlm cook pani kudukanum una suthi suthi varanum una en kittayea vachukanum una paathu epavum rasichutea irukukanum..enata ula love mood romance care happy console apdi ela feel um unaku kudukanum..una nalla sandhosama enkita vachukanum una relax ah calm ah enkita vachu healthy ah paathukanum nu tha mah full ah mind la ooditea irukum😌💋🤍
+      Enoda thoughts elm una suthi tha mah Iruku full ah una theditea una nenachutea una luv panitea Iruku 🤍💋🫂
+      And one more thing enana abee mah abee mah apdinu una kooptute un suthi suthi varanum🫂😊
+      Una neraiya luv pananum.. neraiya tym spend pananum.. neraiya romance pananum neraiya care pani una nalla pathukanum..una suthi suthi varanum..na koopdura thoorathula enkita ne irukanum..unna na nenaikura nerathula paathu enkita vachu rasikanun..unkooda full ah tym spend pananum nenaikura tym veliya ponum..unkooda nalla mutal understanding la irukanum..una en bby pola paathukanum..una enkitaiyea vachukanum..na nenaikurapo un chest la paduthukanum...na happy ah irujurapovum sad ah irujurapovum ne enkita irukanum...apdi neraiya aasa Iruku mah
+      unkooda serthu neraiya idam suthi pakanum serthu neraiya explore pananum.. different foods try pananum neraiya romance pananum..unoda serthu healthy ah happy ah chill ah oru lyf lead pananum..unkooda neraiya tym spend pananum..na ne aikura neram spend pananum tym pakama tym spend pananum..una kalyanam panitu sandosama irukanum unaku suppyah irukanum una nalla pathukanum ethlm enaku pidicha visiyam..🤍🥰💋
+      </p>
+    </div>
+  </div>
+
+  <div class="row">
+    <video controls>
+      <source src="videos/vdo11.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Impressed on You🤍</h2>
+      <p>
+       Na unakitta frst pesurapo palagurapo unata enaku frst impression aah na character ena na...na eppavum sluven la mah unata matta pasaga pola pilaiga kitta scene poda maata athu frst una pesurapo la enaku rmb ah pidikum..well decent..aprm enkitta pesura palagura vidham ne enkitta kaatura interest spend pananum meet pananum nu nenaikura aprm enaku kudukura tym ellam pidikum abee mah..aprm nama luv pana start panurapo la nama nenaiya pesikitom apo la un character enaku nalla pidika start aachu mah..epdi na..ne ennaku nu mattum ena mattum suthi suthi varuva ena neraiya luv panura neraiya care panuva..neraiya solli tharuva athlm pidikum abee mah una paakurapo..una na paakurapo ne enmela vaikura luv tha un kanula theriyum..athu na neraiya tym feel panirukn..athooda best part ethuna nama frst ah meet panunathu..apo un kanna paakurapo athula avlo express aagura luv iruthuchu..eppavum athey luv un kanula irukum nama meet panurapo na feel panirukn mah..
+       Munadi nama sanda podurapo thappu en Mela iruthalum seri un Mela iruthalum seri enatha ne kova patalum enkitta pesama irukave maata athu enaku rmb ah pidikum..aana epo athu konjam cmy aagura maari Sela tym enaku feel aagum..ne pesama irukave maata..aana epo la kovam patta pesama irupa..aana athuku aprm enkitta vanthuruva..enatha sanda potalum enkitta vanthuruva athu enaku unata rmb vum pidicha visiyam..nama eppavum happy ah healthy ah sandhosama irukanum nu nenaipa athum enaku pidikum abee mah
+       Una naa paathu frst impress aana un outlook tha mah..frst nama pesikitathula kedaiyathu just paapom avlo tha apo la una nalla sight adipn abee mah..enaku unata rmb ah pidichathu eyes tha abee mah.. melting eye..athu sunlight la paakurapo brown ah apdiyea attractive ah irukum aprm unoda face enaku rmb ah pidikum abee mah..athula antha kutty eyes little bit chubby cheeks risy lips ethula pidikum mah..aprm sweat aagura unoda fore head and neck..unoda hair um enaku pidikum abee mah nalla messy ah irukum..aprm un arms apdiyea pidichutu walk porapo sema feel ah irukum abee mah..unoda chest paathaley bite podanum nu thoonum abee mah..aprm ne munadi beard vachuruka maata antha style ah vda epo bread vachurukathu un face ku innum nalla Iruku abee mah..oru matured face pola kaatum mothathula nalla handsome ah chocolate boy pola irukura abee mah ne 😍
+      </p>
+    </div>
+  </div>
+
+  <div class="row reverse">
+    <video controls>
+      <source src="videos/vdo12.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>How yu Mood On Me💋🥰</h2>
+      <p>
+        Nrml day la solanum na Preethi mah . Na kita irukapo enak close ah dhan ne mostly irupa , konjo na gap adichalum ne oru thinusa paapa ilati kaiya hold paniruva . Antha romantic unkita pudikum . Aprm bike layao nadanthu porapo un shoulder layao , ila una suthi hold panikita unak pudikum sela tym neeyae en kaiya eduthu una suthi hold panipa athu romantic ah Nala irukum pakurpao . Pina ne kaiya pudichu suthi hold pandrapo vye Inga romance aagirum athu vera . Aprm unak kiss Venum na ne apdiya first oru eye contact vaipa athu nala romantic ah irukum 😉😋💋. Sometimes nama kiss pandrapo ne nalla deep ah kiss panuva athu nala romantic ah feel aagum . Bike la porapo varapo un thighs rendum en body la close ah tight pani vachupa apdiyae enmela sanjitu back la irunthu en kazhuthula kiss panuva un face ah en kazhuthoda senthu vachupa . Athela Nala romantic ah irukum mah...na Suma irunthalum ne Suma irukama ipdila pandrapo enakum automatic ah mood start agirum 😉💋
+        ithella nrml days la ula unoda romantic things mah 😚
+      </p>
+    </div>
+  </div>
+<div class="row">
+    <video controls>
+      <source src="videos/vdo13.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>How I like to Care You🤌🫂</h2>
+      <p>
+        Una nalla paathukanum..unaku pidicha dishes la senju kudukanum ne aasa padura pola weekly varieties senju kudukanum..ne wrk mudichu varapo unaku snacks ethum senju kudukanum..aasaiya paathukanum una suthi suthi varanum eppavum abee mah abee mah koopta kettu ena mah slu nu slura thoorathula ne irukanum..thoonurapo la una kiss pananum romance pananum apdi neraiya aasa Iruku mah
+        Una en abee mah va na complete ah nenaikura alavuku pidikum..una vera yarukum vitu thara koodatha avalauku pidikum..enoda motha happiness ah pakura alavuku pidikum..enoda future ah pakura alavuku pidikum..un kita vera yentha ponaiyum vachu pakka koodatha avaluku possessive aagura alavuku pidikum..una abee mah abee mah nu kooptu suthi suthi alavuku pidikum..up and downs la ne en kita irukanum nu nenaikura alavuku pidikum..enoda ela happiness laiyum na una vachu pakanum nu nenaikura avaluku pidikum..una en future ah mattum ilama en life ah pakura alavuku pidikum..avlo pidikum🤍😌✨
+        Enoda elm luv un unaku mattum tharanu aasaiya iruku mah..epavum una suthi suthi abee mah abee mah nu kooptu suthi suthi varanum..ne luv ah ne full ah feel pananum antha feel na unaku kudukanum nu aasaiya Iruku mah..enoda abee ah unkitayea irukanum mah..😌🤍🫂✨
+
+      </p>
+    </div>
+  </div>
+  <div class="row reverse">
+    <video controls>
+      <source src="videos/vdo14.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>Yu're Luv on me 💋</h2>
+      <p>
+      <br> 1. Una enak mathavangala vida romba pudikum chlm nu soluven. </br>
+<br>2. Una en life oda oru part ah pakiren bby nu soluven. </br>
+<br>3. Una enak romba pudikum ela visiyathulayum chlm nu soluven. </br>
+<br>4. En mood elm unak kuduka semaya aasa paduven honey nu soluven. </br>
+<br>5. En ella feelings ahyum ne oruthi feel pananum as my wife ah, my bby ah, my honey ah, my chlm ah, my preethi mah va apdi ella vibe ne matum feel oana aasa paduven en chlm preethi mah apdeenh soli una apdiyae keela paduka vanchu unmela eri padithu un nipples ah kiss pani chew panuven mah apdi na ne kekura qus ku answer pani mudipen 😉🤌🏻💋
+      </p>
+    </div>
+  </div>
+<div class="row">
+    <video controls>
+      <source src="videos/vdo15.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>How I feel You🤍</h2>
+      <p>
+       Enkooda forever ah enakunu yepavum nalla oru partner ah ne enkooda irupa nu na hope vaikura alavuku un luv ah na feel panuvn abee mah💋🫂un luv ah na rmb ah safe ah feel panirukn.. romantic ah mood ah luvly ah caring ah apdi elm feelaiyum un luv ah na feel panirukn abee mah..🫂💋na una en lfy ah pakura alavuku feel panuvn mah..ne mattum Venum una aasaiya koopdanum un suthi suthi varanum nu nenaikura alavuku un luv ah na feel panuvn mah💋🫂na unkita evlo comfort ah free ah luv ah safe ah emotional ah iruka maari un luv ah na feel panurano ne enaku thara athey feel ah unakum kudukanum nu nenaikura alavuku un luv ah na feel panirukn mah..enatha sanda potalum argument aanalum una thedi vara alavuku un luv ah na feel panirukn mah..una thedi miss pani emotional aagura alavuku un luv ah feel panirukn abee mah..single wrd la solanum na..un luv ah na complete ah enakunu feel panirukn mah 💋🤌🏻🤍🫂😌✨and una en husband ah nenaikura alavuku feel panirukn mah
+       Ne enaku kudukura luv ah na unaku epdi expose pananum nu nenaikurana... una lfy long nalla padiya sandhosama una enkita vachu paathu unoda Azhaga oru lfy build pani expose pananum nu aasa paduren mah💋🤍🤌
+
+      </p>
+    </div>
+  </div>
+
+  <div class="row reverse">
+    <video controls>
+      <source src="videos/vdo16.mp4" type="video/mp4">
+    </video>
+
+    <div class="content">
+      <h2>When I'm Think Yu're My Hubby🤍</h2>
+      <p>
+        Na un luv ah evlo evlo feel panurapo athey pola ne enoda husband nu na complete ah feel panuvn mah..apdi feel panurapo manasuku lesa irukum..mind relax ah face la oru happy smile varum..then rmb ah safe ah comfort ah irukum..enaku nu yaru iruka enoda entire lfy kum apdi nenaikura na una luv panura paiyana nenaika thoonathu mah..una like my husband ah mattum tha nenaika thoonum..namaku inum marriage tha abee mah aagala aana ipo la iruthu na una en husband ah nenachu unkooda spend panuren mah.. future laiyum enakunalla husband ah irupa nu enaku un Mela neraiya hope undu abee mah.una en husband nenaikurapo..ne ena nalla paathupa nu nenaika thoonum..ethunaalum serthu face paniklm..like support ah mind ku thoonum abee mah 💋🤍🫂😌✨
+        Abee mah..oru tym vara v2la accept panipagala apdi nu questions neraiya iruthutu iruthu nama 2du perukum aana athalm ipo thandi una en husband ah nenaikura tym ah na rmb ah complete ah sandhosama fulfill ah neraiya luv ooda feel panurn mah 💋🤍😌🫂
+         Una matum en life long luv panitye irukanum. Un luv enak matum life long kedachutye irukanum. Hpy ah each other evlo age analum romantic with loveable ah nalla couples ah irukanum abee mah🤍💋🤌
+         Luv u abee mah 💋🤍😌 nama aasa padura pola elm nadakum..hope nu wrds..nama happy ah forever ah luvable couples ah irupom mah 💋
+      </p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+
+/* FADE-IN ON SCROLL */
+const rows = document.querySelectorAll(".row");
+
+window.addEventListener("scroll", () => {
+  rows.forEach(row => {
+    const top = row.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      row.classList.add("show");
+    }
+  });
+});
+
+</script>
+<a href="final.html" class="continue-btn">Continue ➝ 💖</a>
+</body>
+</html>

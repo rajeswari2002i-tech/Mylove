@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vintage Letter 💌</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#c9a97e;
+  font-family:'Dancing Script', cursive;
+}
+
+/* MAIN FRAME */
+.wrapper{
+  display:flex;
+  gap:40px;
+  padding:60px 40px 60px 40px;
+  border-radius:20px;
+  background:#d8b98f;
+  box-shadow:0 30px 80px rgba(0,0,0,0.5);
+
+  border:6px solid #b88a55;
+  position:relative;
+}
+
+/* LEFT PAPER */
+.paper{
+  position:relative;
+  width:420px;
+  height:520px;
+  padding:30px;
+
+  background:#f5e6d3;
+  border-radius:12px;
+
+  overflow-y:auto;
+
+ 
+
+  /* base shadow */
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.5);
+}
+
+
+
+/* TEXT */
+.text{
+  position:relative;
+  z-index:3;
+  font-size:22px;
+  line-height:1.7;
+  color:#3e2f2f;
+  white-space:pre-wrap;
+
+  
+}
+
+/* RIGHT IMAGE FRAME */
+.photo-frame{
+  width:320px;
+  height:520px;
+  padding:15px;
+  background:#f5e6d3;
+
+  border-radius:10px;
+  border:2px dashed #c8a97e;
+
+  box-shadow:
+    inset 0 0 30px rgba(0,0,0,0.2),
+    0 15px 30px rgba(0,0,0,0.4);
+}
+
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:6px;
+}
+
+/* PEACOCK FEATHER */
+.feather{
+  position:fixed;
+  left:-70px;
+  bottom:0;
+  height:600px;
+  width:auto;
+  opacity:0.9;
+  z-index:1;
+
+  mix-blend-mode:multiply;
+  pointer-events:none;
+
+  animation: featherMove 4s ease-in-out infinite;
+}
+
+/* INK BOTTLE */
+.ink{
+  position:fixed;
+  bottom:0;
+  left:50px;
+
+  height:250px;
+  width:auto;
+ opacity:0.9;
+  z-index:1;
+}
+
+
+
+/* FEATHER ANIMATION */
+@keyframes featherMove{
+  0%{ transform: translateY(0); }
+  50%{ transform: translateY(-8px); }
+  100%{ transform: translateY(0); }
+}
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+
+  background:#b88a55;
+  color:#fff;
+  border:none;
+
+  padding:12px 20px;
+  border-radius:30px;
+
+  cursor:pointer;
+  font-size:14px;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.music-btn{
+  background:#3e2f2f;
+  border:2px solid #c8a97e;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+  <!-- LEFT LETTER -->
+  <div class="paper">
+
+    <img src="images/peacock.png" class="feather">
+    <img src="images/inkandpen.png" class="ink">
+    
+
+    <div class="text" id="letter"></div>
+  </div>
+
+  <!-- RIGHT IMAGE -->
+  <div class="photo-frame">
+    <img src="images/letterimg.jpeg">
+  </div>
+
+</div>
+<audio id="bgMusic" loop>
+  <source src="audio/kadhalkanava.mp3" type="audio/mp3">
+</audio>
+<button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+<script>
+
+/* YOUR FULL LETTER (UNCHANGED) */
+const message = `This letter says....Abee mah frst of all I luv soo much en thangoo💋🤍🫂
+abee mah..nama relationship innum nalla oru bonding ooda understanding ooda understanding ooda iruanum mah ine vara 
+kodiya elm days um happy ah sanda podama sandhosama nama 2du perum irukanum mah..
+oru oru day um aasaiya serthu mrng to nyt spend pananum ena abee mah
+namakula sanda vanthalum athu ena nu iruthu porumaiya pesi slove panikanum ena mah..namakula vara kudiya sandaiya ine nama oru naalum 
+pesi pesi konduu poi vazlakama ena nu samathanama kovatha vitu pesi slove panikanum ena mah..nama serthu happy ah na present and future ah create pananum
+apo tha nama aasa pata oru future ah live pana mudiyum💋enaku ne unaku na namakunu nama family alaga circle la mah
+enaku unoda serthu alaga peacefull aana lfy vazhanum nu aasa paduren..i know yu to feel the samething..so rmb ah
+minimal aahna china china visiyathula nama sandda potu bonding ah break pana koodathu..atha serhu enanu pesi asap ena nu pesi slove panikanum
+Now a days we feel each other on this long distance relationship so entha long distance ah nama bonding luv and understanding ah inum
+increase panunum nu namburen mah..enatha long distance nama bonding and luv ah stable panunalum oru pakam rmb ah kasatama tha mag iruku..
+una nalla theda vaikuthu..unakum ena nalla thedum nu theriyum mah..na una avlo miss ppanuren chlm..antha feel ah mulusa
+unkita kooda solla maten mah..coz neeyum thedi aprm emotional aagiruva nu tha..daily una nenaipn mah..ne yepo varuva varuva nu daily nenachu wait panuvn en abee mah kaga
+entha lond distance la na una rmba rmba ah miss panuren mah..athula unkita oru china chance enaku feel analum enaku nrml ah iruka mudiyathu mah
+odane enanu pesikanum nu nenaipn..sanda potu pesama irutha una inum nalla theda start paniruvn mah..aprm apdiyea emotional um aagirum
+namakula entha long distance la sanda la cmy panipom ena mah nama🫂nama future ah nama parents aasa padura maariyum nama aasa
+padura maariyum semaiya liv pananum..na unaku yepavum ela visiyathulaiyum support ah iruon en abee mah..
+ne en mela vaikura hope and ne en appa ku kudutha hope na yepavum break panura maari nadanthuka maten en mah..
+unaku oru nalla wife ah una understand pani nalla partner ah ela visiyathulayum unaku support pani una yarukitayum vitu kudukama una nalla paaathukn ena mah..
+aasa thera una luv pani en luv ah unaku expose pani kuduthu una aasaiya enkita vachu paathukn ena mah..
+ena ne nalla paathupa nu enaku un mela yepavum neraiya hope undu abee mah..athey pola nanum una nalla paathu 
+nama aasa pata dream lfy ah live pananum abee mah..,nama lfy ah compact ah namaku happiness kudukura china china visiyagala paathu paathu
+senju togerther ah forever ah unaku na enku ne nu sandhosama live pananum abee mah...Luv u sooo much en abee mah💋🤍🫂🤌✨`;
+
+let i=0;
+function typeWriter(){
+  if(i < message.length){
+    document.getElementById("letter").innerHTML += message.charAt(i);
+    i++;
+    setTimeout(typeWriter, 15);
+  }
+}
+typeWriter();
+
+</script>
+<script>
+const music = document.getElementById("bgMusic");
+
+function toggleMusic(){
+  if(music.paused){
+    music.play();
+    event.target.innerText = "⏸ Pause Music";
+  } else {
+    music.pause();
+    event.target.innerText = "🎵 Play Music";
+  }
+}
+</script>
+</body>
+</html>

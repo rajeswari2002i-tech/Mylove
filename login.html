@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Only You Know Us 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      overflow: hidden;
+    }
+
+    /* LEFT SIDE */
+    .left {
+      width: 50%;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .left img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: zoom 20s infinite alternate;
+    }
+
+    @keyframes zoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.1); }
+    }
+
+    /* Overlay */
+    .left::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 240, 245, 0.3);
+    }
+
+    /* RIGHT SIDE */
+    .right {
+      width: 50%;
+      background: #fff7f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .quiz-box {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      width: 320px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      animation: fadeIn 1s ease;
+      z-index: 2;
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      color: #5a2a3a;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #7a5a68;
+      margin-bottom: 20px;
+    }
+
+    .question {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      outline: none;
+      transition: 0.3s;
+    }
+
+    input:focus {
+      border-color: #e8aeb7;
+      box-shadow: 0 0 10px rgba(232,174,183,0.5);
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #ec0b2d;
+      border: none;
+      border-radius: 20px;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #d98c9b;
+    }
+
+    .feedback {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #d14b6a;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      color: #ff7b9c;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* MOBILE */
+    @media(max-width: 768px){
+      body {
+        flex-direction: column;
+      }
+      .left, .right {
+        width: 100%;
+        height: 50%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- LEFT IMAGE -->
+  <div class="left">
+    <img src="images/img1.jpeg" alt="Our Photo">
+  </div>
+
+  <!-- RIGHT QUIZ -->
+  <div class="right">
+    <div class="quiz-box">
+      <h2>Only You Know Us 💖</h2>
+      <p>Answer these to unlock my heart ❤️</p>
+
+      <div class="question" id="question"></div>
+      <input type="text" id="answer" placeholder="Your answer...">
+
+      <button onclick="checkAnswer()">Next 💕</button>
+
+      <div class="feedback" id="feedback"></div>
+    </div>
+  </div>
+
+  <script>
+    const questions = [
+      { q: "What is our special date? 📅💬", a: "24/02/2024" },
+      { q: "When we meet eachother for the frst tym? 💬", a: "03/10/2023" },
+      { q: "What nickname do I call you? 💕", a: "Mah" }
+    ];
+
+    let current = 0;
+
+    function loadQuestion() {
+      document.getElementById("question").innerText = questions[current].q;
+      document.getElementById("answer").value = "";
+      document.getElementById("feedback").innerText = "";
+    }
+
+    function checkAnswer() {
+      const userAnswer = document.getElementById("answer").value.toLowerCase();
+
+      if (userAnswer === questions[current].a.toLowerCase()) {
+        current++;
+        if (current < questions.length) {
+          loadQuestion();
+        } else {
+          window.location.href = "index.html";
+        }
+      } else {
+        document.getElementById("feedback").innerText =
+          "Hmm… think again my love 🥺💖";
+      }
+    }
+
+    loadQuestion();
+
+    // Floating hearts on right side
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "px";
+      heart.style.bottom = "0";
+      heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.querySelector(".right").appendChild(heart);
+
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>

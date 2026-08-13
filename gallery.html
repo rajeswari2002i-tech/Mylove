@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Our Memories 💖</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0f0f0f;
+  color: white;
+  text-align: center;
+}
+
+/* TITLE */
+h1 {
+  font-family: 'Playfair Display';
+  margin: 30px 0 10px;
+  font-size: 2.5rem;
+}
+
+p {
+  color: #bbb;
+  margin-bottom: 30px;
+}
+
+/* ================= MASONRY GALLERY ================= */
+.gallery {
+  column-count: 3;
+  column-gap: 20px;
+  padding: 20px;
+}
+
+.gallery img {
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 18px;
+  transition: all 0.4s ease;
+  filter: brightness(0.9);
+}
+
+/* Hover effect */
+.gallery img:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+  box-shadow: 0 10px 40px rgba(255, 105, 180, 0.3);
+}
+
+/* Different sizes */
+.gallery img:nth-child(3n) {
+  border-radius: 50px;
+}
+
+.gallery img:nth-child(5n) {
+  height: 300px;
+  object-fit: cover;
+}
+
+.gallery img:nth-child(7n) {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Animation */
+.gallery img {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.gallery img:nth-child(1){animation-delay:0.1s;}
+.gallery img:nth-child(2){animation-delay:0.2s;}
+.gallery img:nth-child(3){animation-delay:0.3s;}
+.gallery img:nth-child(4){animation-delay:0.4s;}
+.gallery img:nth-child(5){animation-delay:0.5s;}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= CAROUSEL ================= */
+.carousel {
+  position: relative;
+  max-width: 1200px;
+  margin: 50px auto;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  height: 550px;
+}
+
+.slide img,
+.slide video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+/* Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.2);
+  border: none;
+  color: white;
+  font-size: 20px;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* BUTTON */
+.btn {
+  margin: 40px;
+  padding: 12px 30px;
+  background: #ff4d6d;
+  border: none;
+  border-radius: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .gallery {
+    column-count: 1;
+  }
+}
+.music-icon{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 55px;
+  height: 55px;
+
+  background: rgba(255, 77, 109, 0.9);
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  color: white;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 20px rgba(255, 77, 109, 0.4);
+
+  transition: 0.3s;
+}
+
+/* hover */
+.music-icon:hover{
+  transform: scale(1.1);
+}
+
+/* playing animation */
+.music-icon.playing{
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse{
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.15); }
+  100%{ transform: scale(1); }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>Our Beautiful Memories 🤍😍</h1>
+<p>No matter where we are…
+being with you is enough to make everything perfect…Abee mah✨</p>
+
+<!-- 💖 MASONRY GALLERY -->
+<div class="gallery">
+  <img src="images/frstmeet.png">
+  <img src="images/aigreen.png">
+  <img src="images/temple.png">
+  <img src="images/tradition.png">
+  <img src="images/slide5.png">
+  <img src="images/handholding.png">
+  <img src="images/slide6.png">
+  <img src="images/aiblue.png">
+  <img src="images/beer.png">
+  <img src="images/collage.png">
+  <img src="images/paper.png">
+  <img src="images/kiss.png">
+  
+  
+  
+  
+
+</div>
+
+<!-- 💖 CAROUSEL -->
+<div class="carousel">
+
+<button class="carousel-btn prev" onclick="moveSlide(-1)">❮</button>
+
+<div class="carousel-track" id="track">
+
+  <!-- <div class="slide">
+    <video autoplay muted loop>
+      <source src="videos/slide1.mp4" type="video/mp4">
+    </video>
+  </div> -->
+
+  <!-- <div class="slide">
+    <img src="images/slide5.png">
+  </div> -->
+
+  <div class="slide">
+    <video autoplay muted loop>
+      <source src="videos/slide2.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <div class="slide">
+    <img src="images/slide6.png">
+  </div>
+
+  <div class="slide">
+    <video autoplay muted loop>
+      <source src="videos/slide3.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- <div class="slide">
+    <img src="images/slide7.png">
+  </div> -->
+
+  <div class="slide">
+    <video autoplay muted loop>
+      <source src="videos/slide4.mp4" type="video/mp4">
+    </video>
+  </div>
+
+</div>
+
+<button class="carousel-btn next" onclick="moveSlide(1)">❯</button>
+
+</div>
+
+<button class="btn" onclick="nextPage()">Listen to My Heart 🎧</button>
+<audio id="bgMusic" loop>
+  <source src="audio/kalvare.mp3" type="audio/mp3">
+</audio>
+<div class="music-icon" onclick="toggleMusic()">
+  🎵
+</div>
+<script>
+let index = 0;
+
+function moveSlide(step) {
+  const track = document.getElementById("track");
+  const slides = document.querySelectorAll(".slide");
+
+  index = (index + step + slides.length) % slides.length;
+
+  track.style.transform = `translateX(-${index * 100}%)`;
+}
+
+function nextPage() {
+  window.location.href = "podcast.html";
+}
+</script>
+<script>
+const music = document.getElementById("bgMusic");
+const icon = document.querySelector(".music-icon");
+
+function toggleMusic(){
+  if(music.paused){
+    music.play();
+    icon.classList.add("playing");
+  } else {
+    music.pause();
+    icon.classList.remove("playing");
+  }
+}
+
+/* autoplay on first interaction */
+document.body.addEventListener("click", () => {
+  music.play();
+  icon.classList.add("playing");
+}, { once: true });
+</script>
+</body>
+</html>

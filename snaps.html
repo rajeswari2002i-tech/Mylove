@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Our Snap Memories 💛</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+
+*{
+box-sizing:border-box;
+}
+
+
+body{
+
+margin:0;
+
+background:
+radial-gradient(circle at top,#333,#050505);
+
+font-family:Poppins,Arial,sans-serif;
+
+color:white;
+
+overflow-x:hidden;
+
+}
+
+/* FLOATING CONTINUE BUTTON */
+
+.continue-btn{
+
+position:fixed;
+
+bottom:30px;
+
+right:30px;
+
+background:#fffc00;
+
+color:black;
+
+padding:14px 22px;
+
+border-radius:30px;
+
+font-weight:bold;
+
+text-decoration:none;
+
+box-shadow:0 0 20px #fffc00;
+
+transition:0.3s;
+
+z-index:1000;
+
+}
+
+
+/* HOVER EFFECT */
+
+.continue-btn:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 35px #fffc00;
+
+}
+
+/* TITLE */
+
+
+.title{
+
+text-align:center;
+
+font-size:38px;
+
+padding:35px;
+
+color:#fffc00;
+
+text-shadow:0 0 20px #fffc00;
+
+}
+
+
+
+
+
+/* MEMORY HERO AREA */
+
+
+.memory-space{
+
+height:650px;
+
+position:relative;
+
+}
+
+
+
+
+/* CENTER COUPLE */
+
+
+.center-love{
+
+position:absolute;
+
+top:50%;
+
+left:50%;
+
+transform:translate(-50%,-50%);
+
+display:flex;
+
+align-items:center;
+
+gap:25px;
+
+z-index:10;
+
+}
+
+
+
+.person{
+
+width:230px;
+
+height:300px;
+
+border-radius:50%;
+
+object-fit:cover;
+
+border:5px solid #fffc00;
+
+box-shadow:
+0 0 35px #fffc00;
+
+}
+
+
+
+.heart{
+
+font-size:55px;
+
+animation:pulse 1.5s infinite;
+
+}
+
+
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.3);
+
+}
+
+}
+
+
+/* FLOATING MESSAGE CARDS */
+
+
+.float-message{
+
+position:absolute;
+
+background:white;
+
+color:#333;
+
+padding:18px 22px;
+
+border-radius:25px;
+
+font-size:15px;
+
+font-weight:bold;
+
+box-shadow:
+0 10px 30px rgba(255,255,0,.25);
+
+max-width:350px;
+
+
+}
+
+
+
+
+.m1{
+
+top:50px;
+
+left:5%;
+
+}
+
+
+.m3{
+
+bottom:50px;
+
+left:5%;
+
+}
+
+
+
+.m4{
+
+top:50px;
+
+right:5%;
+
+}
+
+
+
+.m5{
+
+bottom:50px;
+
+right:5%;
+
+}
+
+/* FLOATING VOICE NOTES */
+
+
+.float-voice{
+
+
+position:absolute;
+
+
+display:flex;
+
+align-items:center;
+
+gap:12px;
+
+
+background:
+rgba(255,255,255,.12);
+
+
+backdrop-filter:blur(10px);
+
+
+padding:12px 20px;
+
+
+border-radius:40px;
+
+
+border:1px solid rgba(255,255,255,.3);
+
+
+}
+
+
+
+
+.voice-text{
+
+font-size:14px;
+
+}
+
+
+
+
+
+.play{
+
+
+width:45px;
+
+height:45px;
+
+border-radius:50%;
+
+
+background:#fffc00;
+
+
+color:black;
+
+
+display:flex;
+
+align-items:center;
+
+justify-content:center;
+
+
+cursor:pointer;
+
+
+font-size:18px;
+
+
+}
+
+
+
+
+
+.v1{
+
+top:60px;
+
+left:35%;
+
+}
+
+
+.v2{
+
+top:250px;
+
+left:10%;
+
+}
+
+
+
+.v3{
+
+bottom:80px;
+
+left:35%;
+
+}
+
+
+
+.v4{
+
+top:60px;
+
+right:35%;
+
+}
+
+
+
+.v5{
+
+top:250px;
+
+right:10%;
+
+}
+
+
+
+.v6{
+
+bottom:80px;
+
+right:35%;
+
+}
+.memory-carousel{
+    width:100%;
+    height:550px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.memory-stage{
+    width:100%;
+    max-width:1200px;
+    height:500px;
+    position:relative;
+}
+
+
+/* ================= CARDS ================= */
+
+.memory-card{
+    position:absolute;
+    top:50%;
+    left:50%;
+
+    width:300px;
+    height:400px;
+
+    border-radius:20px;
+    overflow:hidden;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.25);
+
+    box-shadow:0 20px 50px rgba(0,0,0,.5);
+
+    transition:
+        transform .6s ease,
+        opacity .6s ease,
+        filter .6s ease;
+
+    transform-origin:center;
+}
+
+
+.memory-card img,
+.memory-card video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+
+/* ================= CENTER ================= */
+
+.memory-card.center{
+
+    transform:
+        translate(-50%,-50%)
+        scale(1);
+
+    width:340px;
+    height:470px;
+
+    opacity:1;
+
+    z-index:5;
+
+    filter:none;
+
+    border:1px solid rgba(255,255,255,.7);
+
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.7),
+        0 0 35px rgba(255,252,0,.25);
+}
+
+
+/* ================= LEFT ================= */
+
+.memory-card.left{
+
+    transform:
+        translate(-500px,-50%)
+        scale(.82);
+
+    opacity:.65;
+
+    z-index:2;
+
+    filter:brightness(.65);
+}
+
+
+/* ================= RIGHT ================= */
+
+.memory-card.right{
+
+    transform:
+        translate(160px,-50%)
+        scale(.82);
+
+    opacity:.65;
+
+    z-index:2;
+
+    filter:brightness(.65);
+}
+
+
+/* ================= HIDDEN ================= */
+
+.memory-card.hidden{
+
+    transform:
+        translate(-50%,-50%)
+        scale(.5);
+
+    opacity:0;
+
+    z-index:0;
+
+    pointer-events:none;
+}
+
+
+/* ================= ARROWS ================= */
+
+.memory-arrow{
+
+    position:absolute;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    border:1px solid rgba(255,255,255,.35);
+
+    background:rgba(255,255,255,.1);
+
+    backdrop-filter:blur(10px);
+
+    color:#fffc00;
+
+    font-size:35px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    cursor:pointer;
+
+    z-index:20;
+
+    transition:.3s;
+}
+
+
+.memory-arrow:hover{
+
+    background:#fffc00;
+
+    color:#000;
+
+    transform:
+        translateY(-50%)
+        scale(1.1);
+
+    box-shadow:0 0 30px #fffc00;
+}
+
+
+.memory-arrow.left{
+    left:25px;
+}
+
+
+.memory-arrow.right{
+    right:25px;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media(max-width:700px){
+
+    .memory-carousel{
+        height:480px;
+    }
+
+    .memory-card.center{
+        width:240px;
+        height:350px;
+    }
+
+    .memory-card.left{
+        transform:
+            translate(-220px,-50%)
+            scale(.65);
+
+        opacity:.3;
+    }
+
+    .memory-card.right{
+        transform:
+            translate(100px,-50%)
+            scale(.65);
+
+        opacity:.3;
+    }
+
+    .memory-arrow{
+        width:45px;
+        height:45px;
+        font-size:28px;
+    }
+
+    .memory-arrow.left{
+        left:10px;
+    }
+
+    .memory-arrow.right{
+        right:10px;
+    }
+
+}
+
+</style>
+
+</head>
+<body>
+<div class="title">
+
+Our Beautiful Memories 💛
+
+</div>
+
+
+
+
+
+<!-- CENTER AREA -->
+
+
+<div class="memory-space">
+
+
+
+<!-- Messages -->
+
+
+<div class="float-message m1">
+"Nerungathye ♪ vilagathye ♪ un Pakkam irunthal ketutu poven ♪ thalli irunthal nallavan aavyene ♪"
+</div>
+
+
+<div class="float-message m3">
+"நீ...♪♪ தினம் சிரிச்சா போதுமே...!! ♪😉🤍🙌 வேற எதுவும் வேணாமே நான் வாழவே♪🫂🤍💋✨. நா உன்னை ரசிச்சா போதுமே ♪😌🤌😍 வேற எதுவும் வேணாமே நான் வாழவே வாழவே!!!!!🎵🎶🎻"
+</div>
+
+
+<div class="float-message m4">
+"Uyirin uyire unathu vizhiyil en mugam na ln kaana vendam 🙂‍↔️. Urangum pothum urangidamal kanavilye ne thondra vendum 🙂‍↔️"
+</div>
+
+
+<div class="float-message m5">
+"Unakaga ! Nama life kaga na kasta paduven mah 🤌🏻🫂 . Nama life growth kaga na kasta paduven mah . Una nalla pathukurathukaga na kasta paduven mah 🫂 seriya"
+</div>
+
+
+
+
+
+<!-- Voice Notes -->
+
+
+<div class="float-voice v1">
+
+<div class="play" onclick="playVoice(this)">▶</div>
+
+<audio src="audio/audio23.mp3"></audio>
+
+<span class="voice-text">
+Voice Note 1
+</span>
+
+</div>
+
+
+
+<div class="float-voice v2">
+
+<div class="play" onclick="playVoice(this)">▶</div>
+
+<audio src="audio/audio24.mp3"></audio>
+
+<span class="voice-text">
+Voice Note 2
+</span>
+
+</div>
+
+
+
+<div class="float-voice v3">
+
+<div class="play" onclick="playVoice(this)">▶</div>
+
+<audio src="audio/audio25.mp3"></audio>
+
+<span class="voice-text">
+Voice Note 3
+</span>
+
+</div>
+
+
+
+<div class="float-voice v4">
+
+<div class="play" onclick="playVoice(this)">▶</div>
+
+<audio src="audio/audio26.mp3"></audio>
+
+<span class="voice-text">
+Voice Note 4
+</span>
+
+</div>
+
+
+
+
+<div class="float-voice v5">
+
+<div class="play" onclick="playVoice(this)">▶</div>
+
+<audio src="audio/audio27.mp3"></audio>
+
+<span class="voice-text">
+Voice Note 5
+</span>
+
+</div>
+
+
+
+
+<div class="float-voice v6">
+
+<div class="play" onclick="playVoice(this)">▶</div>
+
+<audio src="audio/audio28.mp3"></audio>
+
+<span class="voice-text">
+Voice Note 6
+</span>
+
+</div>
+
+
+
+
+
+<!-- AVATAR -->
+
+
+<div class="center-love">
+<img class="person" src="images/ava1.jpeg">
+<div class="heart">
+🤍
+</div>
+
+
+<img class="person" src="images/ava2.jpeg">
+</div>
+</div>
+
+
+<!-- PHOTO VIDEO SECTION -->
+
+<!-- ================= CONTAINER ================= -->
+
+<div class="memory-carousel">
+
+    <!-- LEFT ARROW -->
+    <button
+        class="memory-arrow left"
+        onclick="previousMemory()">
+        ‹
+    </button>
+
+
+    <div class="memory-stage">
+
+
+        <!-- 1 -->
+        <div class="memory-card">
+
+            <img src="images/img7.jpeg">
+
+        </div>
+    <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap1.mp4">
+            </video>
+
+        </div>
+
+        <!-- 2 -->
+        <div class="memory-card">
+
+            <img src="images/img8.jpeg">
+
+        </div>
+
+    <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap2.mp4">
+            </video>
+
+        </div>
+        <!-- 3 -->
+        <div class="memory-card">
+
+            <img src="images/img9.jpeg">
+
+        </div>
+    <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap3.mp4">
+            </video>
+
+        </div>
+
+        <!-- 4 -->
+        <div class="memory-card">
+
+            <img src="images/img10.jpeg">
+
+        </div>
+    <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap4.mp4">
+            </video>
+
+        </div>
+
+        <!-- 5 -->
+        <div class="memory-card">
+
+            <img src="images/img11.jpeg">
+
+        </div>
+
+    <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap5.mp4">
+            </video>
+
+        </div>
+        <!-- 6 -->
+        <div class="memory-card">
+
+            <img src="images/img12.jpeg">
+
+        </div>
+    <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap6.mp4">
+            </video>
+
+        </div>
+
+        <!-- 7 -->
+        <div class="memory-card">
+
+            <img src="images/img13.jpeg">
+
+        </div>
+    <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap7.mp4">
+            </video>
+
+        </div>
+
+        <!-- 8 -->
+        <div class="memory-card">
+
+            <img src="images/img14.jpeg">
+
+        </div>
+          <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap8.mp4">
+            </video>
+
+        </div>
+         <div class="memory-card">
+
+            <img src="images/img18.jpeg">
+
+        </div>
+
+    <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap9.mp4">
+            </video>
+
+        </div>
+         <div class="memory-card">
+
+            <img src="images/img19.jpeg">
+
+        </div>
+          <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap10.mp4">
+            </video>
+
+        </div>
+         <div class="memory-card">
+
+            <img src="images/img15.jpeg">
+
+        </div>
+          <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap11.mp4">
+            </video>
+
+        </div>
+         <div class="memory-card">
+
+            <img src="images/img16.jpeg">
+
+        </div>
+          <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap12.mp4">
+            </video>
+
+        </div>
+         <div class="memory-card">
+
+            <img src="images/img17.jpeg">
+
+        </div>
+          <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap13.mp4">
+            </video>
+
+        </div>
+        <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap17.mp4">
+            </video>
+
+        </div>
+        <div class="memory-card">
+
+            <img src="images/img21.jpeg">
+
+        </div>
+        <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap16.mp4">
+            </video>
+
+        </div>
+        <div class="memory-card">
+
+            <img src="images/img20.jpeg">
+
+        </div>
+          <div class="memory-card">
+
+            <video
+                controls
+                playsinline
+                src="videos/snap15.mp4">
+            </video>
+
+        </div>
+           
+    </div>
+
+
+    <!-- RIGHT ARROW -->
+    <button
+        class="memory-arrow right"
+        onclick="nextMemory()">
+        ›
+    </button>
+
+</div>
+
+
+
+
+
+
+</div>
+<a href="vdo.html" class="continue-btn">
+  Continue 
+</a>
+<script>
+function playVoice(btn){
+let audio=btn.nextElementSibling;
+if(audio.paused){
+audio.play();
+btn.innerHTML="⏸";
+}
+else{
+audio.pause();
+btn.innerHTML="▶";
+}
+}
+</script>
+<script>
+
+const memoryCards =
+    document.querySelectorAll(".memory-card");
+
+let currentMemory = 0;
+
+
+function showMemory(){
+
+    const total =
+        memoryCards.length;
+
+
+    memoryCards.forEach((card,index)=>{
+
+        card.className = "memory-card";
+
+
+        /* CENTER */
+
+        if(index === currentMemory){
+
+            card.classList.add("center");
+
+        }
+
+
+        /* LEFT */
+
+        else if(
+            index ===
+            (currentMemory - 1 + total) % total
+        ){
+
+            card.classList.add("left");
+
+        }
+
+
+        /* RIGHT */
+
+        else if(
+            index ===
+            (currentMemory + 1) % total
+        ){
+
+            card.classList.add("right");
+
+        }
+
+
+        /* HIDDEN */
+
+        else{
+
+            card.classList.add("hidden");
+
+        }
+
+    });
+
+}
+
+
+function nextMemory(){
+
+    currentMemory++;
+
+    if(currentMemory >= memoryCards.length){
+
+        currentMemory = 0;
+
+    }
+
+    showMemory();
+
+}
+
+
+function previousMemory(){
+
+    currentMemory--;
+
+    if(currentMemory < 0){
+
+        currentMemory =
+            memoryCards.length - 1;
+
+    }
+
+    showMemory();
+
+}
+
+
+/* START */
+
+showMemory();
+
+</script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Little World 💕</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff7f9;
+      color: #5a2a3a;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin: 30px 0 10px;
+    }
+
+    p {
+      color: #7a5a68;
+      margin-bottom: 30px;
+    }
+
+    /* Cards */
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+      cursor: pointer;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+    }
+
+    .card h3 {
+      margin: 15px 0 5px;
+    }
+
+    .card p {
+      padding: 0 15px 20px;
+      font-size: 0.95rem;
+    }
+
+    /* Button */
+    .btn {
+      margin: 40px;
+      padding: 12px 25px;
+      background: #f10629;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+    }
+.music-icon{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+
+  width: 55px;
+  height: 55px;
+
+  background: #f10629;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 22px;
+  color: white;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 20px rgba(241, 6, 41, 0.4);
+  transition: 0.3s;
+}
+
+.music-icon:hover{
+  transform: scale(1.1);
+}
+
+/* Playing animation */
+.music-icon.playing{
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse{
+  0%{ transform: scale(1); }
+  50%{ transform: scale(1.15); }
+  100%{ transform: scale(1); }
+}
+  </style>
+</head>
+
+<body>
+
+  <h1>Our Little World 💕</h1>
+  <p>Just you, me… and all our little moments</p>
+
+  <div class="container">
+
+    <div class="card">
+      <img src="images/aifrstmeet.png">
+      <h3>Frst meet up🫂</h3>
+      <p>Our first meet and frst kiss feels like just now… yet it’s been 3 beautiful years with you Abee mahh💋🫂🤍
+</p>
+    </div>
+
+    <div class="card">
+      <img src="images/aikiss.png">
+      <h3>Our Kisses 💋</h3>
+      <p>Our kisses… every time you kiss me, I melt into you and feel like I’m yours forever 💕
+</p>
+    </div>
+
+    <div class="card">
+      <img src="images/aibeachdate.png">
+      <h3>Frst Beach Date 🏖️🌊</h3>
+      <p>This beach completely knows our luv, mood, romance, cuddles, hugs, kisses, little fights,laughs, and every emotion in between 🌊❤️
+</p>
+    </div>
+
+    <div class="card">
+      <img src="images/aitempledate.png">
+      <h3>Frst Kovil Date 🛕🫶</h3>
+      <p>We prayed for each other, and somehow life brought us together forever 🤍✨</p>
+    </div>
+
+    <div class="card">
+      <img src="images/airestaurent.png">
+      <h3>Lunch tym🍴🍜🍨</h3>
+      <p>Had lunch together… feeding each other with love, turning every bite into a memory 💕🍽️
+</p>
+    </div>
+
+    <div class="card">
+      <img src="images/aipark.png">
+      <h3>Park Tym🛝🌳</h3>
+      <p>In park we sat under the tree and yu hold me in your arms and we spoke a lot of things which helps to make us bonding stronger🫂🤗</p>
+    </div>
+
+    <div class="card">
+      <img src="images/aistay.png">
+      <h3>Romantic Stays 💋</h3>
+      <p>when we stays for a day it felt vry Moody and sexy from pickups to drop. I completely feel you like mine with..💋🥵</p>
+    </div>
+
+    <div class="card">
+      <img src="images/aibikeride.png">
+      <h3>Luvly mrngs 🌄🍃</h3>
+      <p>Morning bike rides with a soft breeze, coffee, sweets, and yu..those little moments makes my heart crave you more 💕☕🌿
+</p>
+    </div>
+
+     <div class="card">
+      <img src="images/aibite.png">
+      <h3>Beach hugs 🌊🫂</h3>
+      <p>When I hug you, I’m completely melting into you 🫂</p>
+    </div>
+
+     <div class="card">
+      <img src="images/aitemple.png">
+      <h3>Peace holdings🤗🤌</h3>
+      <p>Beach hugs 🌊🤍
+When I hold you, everything feels calm… like I’ve found my complete peace in you 💕
+🤗</p>
+    </div>
+
+     <div class="card">
+      <img src="images/airomantic.png">
+      <h3>hot & Moody💋🥵</h3>
+      <p>Beach hugs 🌊🤍
+When we stay together, we feel completely..satisfy in our mood, sharing our own little world of romance 💕
+</p>
+    </div>
+
+     <div class="card">
+      <img src="images/aifuture.png">
+      <h3>Our future💏👶</h3>
+      <p>Beach hugs 🌊🤍
+You, me & our little one...living together with peace, love, and happy hearts gives us meaningful lyf💏💋🤌
+</p>
+    </div>
+
+  </div>
+
+  <button class="btn" onclick="nextPage()">Our Snaps📷🫰</button>
+  <audio id="bgMusic" loop>
+  <source src="audio/vasegara.mp3" type="audio/mp3">
+</audio>
+<div class="music-icon" onclick="toggleMusic()">🎵</div>
+
+  <script>
+    function nextPage() {
+      window.location.href = "snaps.html";
+    }
+  </script>
+   <script>
+const music = document.getElementById("bgMusic");
+const icon = document.querySelector(".music-icon");
+
+function toggleMusic(){
+  if(music.paused){
+    music.play();
+    icon.classList.add("playing");
+  } else {
+    music.pause();
+    icon.classList.remove("playing");
+  }
+}
+
+/* autoplay on first click */
+document.body.addEventListener("click", () => {
+  music.play();
+  icon.classList.add("playing");
+}, { once: true });
+ </script>
+</body>
+</html>

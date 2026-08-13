@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Journey 💖</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #fff7f9, #ffe3ec, #fff0f5);
+  color: #5a2a3a;
+  overflow-x: hidden;
+}
+
+/* TYPEWRITER CURSOR */
+#typeText::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* SECTION ANIMATION */
+.section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  opacity: 0;
+  transform: translateY(100px) scale(0.95);
+  transition: all 1.2s ease;
+}
+
+.section.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+.container {
+  max-width: 1000px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+}
+
+/* TEXT ANIMATION */
+.text {
+  flex: 1;
+  padding: 25px;
+  background: rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  transition: 0.4s;
+}
+.text:hover {
+  transform: translateY(-10px);
+}
+
+.section.show .text {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  
+}
+
+.text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* IMAGE ANIMATION */
+.image {
+  flex: 1;
+  opacity: 0;
+  transform: translateX(60px) scale(0.9);
+  transition: all 1s ease;
+}
+
+.section.show .image {
+  opacity: 1;
+  transform: translateX(0) scale(1);
+}
+
+/* IMAGE STYLE */
+.image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: 0.5s;
+  position: relative;
+}
+
+/* HOVER EFFECT */
+.image img:hover {
+  transform: scale(1.07) rotate(1deg);
+  box-shadow: 0 0 40px rgba(255, 0, 100, 0.4);
+}
+html {
+  scroll-behavior: smooth;
+}
+
+/* FLOATING EFFECT */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.section.show .image img {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* REVERSE FIX */
+.reverse .text {
+  transform: translateX(60px);
+}
+
+.reverse .image {
+  transform: translateX(-60px) scale(0.9);
+}
+
+.section.show.reverse .text {
+  transform: translateX(0);
+}
+
+.section.show.reverse .image {
+  transform: translateX(0) scale(1);
+}
+
+/* FINAL SECTION */
+.end {
+  text-align: center;
+  flex-direction: column;
+}
+
+.end h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.btn {
+  padding: 14px 30px;
+  background: linear-gradient(45deg, #ff4b7d, #ff1e56);
+  border: none;
+  border-radius: 30px;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.4s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(255, 0, 100, 0.6);
+}
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #fff7f9;
+      color: #5a2a3a;
+    }
+
+    .section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 50px 20px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 1s ease;
+    }
+
+    .section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .container {
+      max-width: 1000px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .text {
+      flex: 1;
+    }
+
+    .text h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+
+    .text p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .image {
+      flex: 1;
+    }
+
+    .image img {
+      width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    /* Alternate layout */
+    .reverse {
+      flex-direction: row-reverse;
+    }
+
+    /* Final section */
+    .end {
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .end h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 12px 25px;
+      background: #eb082a;
+      border: none;
+      border-radius: 25px;
+      color: white;
+      cursor: pointer;
+    }
+.music-btn{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+
+  background:#3e2f2f;
+  border:2px solid #c8a97e;
+  color:#fff;
+
+  padding:12px 20px;
+  border-radius:30px;
+
+  cursor:pointer;
+  font-size:14px;
+
+  box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+.music-btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 rgba(255,0,100,0.4); }
+  50% { box-shadow: 0 0 20px rgba(255,0,100,0.8); }
+  100% { box-shadow: 0 0 0 rgba(255,0,100,0.4); }
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- YEAR 1 -->
+  <div class="section">
+    <div class="container">
+      <div class="text">
+        <h2>Year 1 – The Beginning 💕</h2>
+       <!-- YEAR 1 -->
+<p class="typeText"
+data-text="All started with a simple conversation…
+Then we fall eachother..Slowly messages turned into memories..💕
+
+It started in 2023 and moving till..
+From “Simple Hi” to “I miss yu mah”…🫂
+From late nyt chats to dreaming about a lifetime together…❤️
+Each cl, mes, care, emotion, feel, vibe, mood swing, chill,laugh, little fight… became a part of luv on us.
+
+yu a boy came into my lyf but now yu a man of my whole world, my day to day thoughts,my peace, my happiness, my safe place, my luv, my lust, my mood, my feel, my day&nyt and my endless memories.
+Days may pass, years may change…
+But one thing will always stay the same..that's yu abee mah💋🫂
+
+Now a days..I feel yur voice make my day..yur mes wakes me up..and yur kisses gently puts me to sleep..Yur snaps makes be smile
+What I was saying… honestly…
+
+Is that only you have the power to make my day… and my life too…Luv u en abee mah..💋🫂😌✨">
+        </p>
+      </div>
+      <div class="image">
+        <img src="images/img5.jpeg" alt="Year 1">
+      </div>
+    </div>
+  </div>
+
+  <!-- YEAR 2 -->
+  <div class="section">
+    <div class="container reverse">
+      <div class="text">
+        <h2>Year 2 – Togetherness 🌸</h2>
+      <p class="typeText"
+data-text="We learned… we fought… we understood… we adjusted for each other…
+And through everything, our love only grew stronger… 💕
+
+Even in the toughest 6 months…Abee mah🥹
+when nothing felt easy…
+when days were heavy and full of questions…
+we still chose each other… again and again… ❤️
+
+You waited for me…
+And I kept holding on to you…
+
+We kept wondering…
+“Will our days come back again?”
+“Will everything become normal like before?”
+“Will we meet again?”
+“Will our parents accept us?”
+
+So many fears… so many doubts…
+But still… we never gave up on us…
+
+And then… after long 6 months…
+we finally met again… slowly…our days turn over..
+we gave time to each other and healing together…🫂
+
+Day by day…
+our toughest times started fading and
+turn into memories…
+those memories are now living in our gallery…
+
+What once hurt us…
+now reminds us how strong we are…😌🫂
+
+Because we didn’t just face our hardest days…
+we faced them together…🫂I will hold yur hands for forever abee mah😌✨Luv u en chlmmm💋🫂"></p>
+      </div>
+      <div class="image">
+        <img src="images/img4.jpeg" alt="Year 2">
+      </div>
+    </div>
+  </div>
+
+  <!-- YEAR 3 -->
+  <div class="section">
+    <div class="container">
+      <div class="text">
+        <h2>Year 3 – Forever ❤️</h2>
+      <p class="typeText"
+data-text="Now it’s not just love… it’s my everything… 💕
+You became my peace, my strength, my whole world…
+And this is just the beginning of our forever…
+
+We met… we stayed… and we kept choosing each other…
+And now, you are a complete part of my life, abee mah… ❤️
+
+Now its sounds like 
+without you I’m nothing…
+
+With our togetherness…
+all our doubts? all our questions?
+slowly turned into marriage proposal with our parents…
+We discuss... future… marriage… life together…
+
+I still remember that day at the beach… 🌊
+When I told you,
+Ellam nalla padiya nadakum abee mah…
+Nama veetla parents kandipa namala accept pannipanga…
+Nama avanga acceptance oda sandhoshama irupom…
+
+You got emotional hearing those words…
+And today… those same words are slowly turning into reality… 💖
+
+
+Nama ippo irukara madhiri…
+eppovume sandhoshama… healthy-ah…
+good understanding and adjustment
+love, care, and happiness oda…
+azhagana oru life unkooda vaazhanum abee mah… ❤️
+
+This is not a wish…
+This my entire life’s desire… ✨
+Luv u sooo much en uyireyyyy💋🫂😌✨"></p>
+      </div>
+      <div class="image">
+        <img src="images/img3.jpeg" alt="Year 3">
+      </div>
+    </div>
+  </div>
+
+  <!-- END SECTION -->
+  <div class="section end">
+    <h1>Our Countless Memories 💖</h1>
+    <p>And I still choose you… every single day…
+In every moment… in every lifetime…
+It will always be you… abee mah… 🫂✨😌</p>
+    <br>
+    <button class="btn" onclick="nextPage()">See Our Memories 📸</button>
+  </div>
+  <audio id="bgMusic" loop>
+  <source src="audio/munbeva.mp3" type="audio/mp3">
+</audio>
+<button class="music-btn" onclick="toggleMusic()">🎵 Play Music</button>
+
+  <script>
+    // Scroll animation
+    const sections = document.querySelectorAll('.section');
+
+    function reveal() {
+      sections.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        const trigger = window.innerHeight - 100;
+
+        if (top < trigger) {
+          section.classList.add('show');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', reveal);
+    reveal();
+
+    // Next page
+    function nextPage() {
+      window.location.href = "gallery.html";
+    }
+  </script>
+  <script>
+const elements = document.querySelectorAll(".typeText");
+
+elements.forEach((el) => {
+  const text = el.getAttribute("data-text");
+  let i = 0;
+
+  function typeWriter() {
+    if (i < text.length) {
+      el.innerHTML += text.charAt(i);
+      i++;
+      setTimeout(typeWriter, 30);
+    }
+  }
+
+  const observer = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      typeWriter();
+      observer.disconnect();
+    }
+  });
+
+  observer.observe(el);
+});
+</script>
+<script>
+const music = document.getElementById("bgMusic");
+
+function toggleMusic(){
+  if(music.paused){
+    music.play();
+    event.target.innerText = "⏸ Pause Music";
+  } else {
+    music.pause();
+    event.target.innerText = "🎵 Play Music";
+  }
+}
+</script>
+<script>
+document.body.addEventListener("click", () => {
+  music.play();
+}, { once: true });
+</script>
+
+</body>
+</html>
