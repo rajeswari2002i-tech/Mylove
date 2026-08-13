@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Our Story ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow: hidden;
+    }
+
+    /* Background */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(255, 240, 245, 0.8), rgba(255, 240, 245, 0.9)),
+                  url('images/img2.jpeg');
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    /* Content */
+    .content {
+      max-width: 700px;
+      padding: 20px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      color: #5a2a3a;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.7rem;
+      color: #6e4b5c;
+      margin-bottom: 30px;
+    }
+
+    .names {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      color: #8b4c63;
+    }
+
+    /* Button */
+    .btn {
+      padding: 12px 30px;
+      background-color: #e91333;
+      border: none;
+      border-radius: 25px;
+      font-size: 1rem;
+      cursor: pointer;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #d98c9b;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: absolute;
+      bottom: -50px;
+      font-size: 20px;
+      color: #ff7b9c;
+      animation: floatUp 6s linear infinite;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Music button */
+    .music-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #e8aeb7;
+      border: none;
+      border-radius: 50%;
+      padding: 12px;
+      cursor: pointer;
+      color: white;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="hero">
+    <div class="content">
+      <h1>It started with a simple Hiii…Inaiku neega leave ah?❤️</h1>
+      <p>And became the most beautiful part of my life</p>
+      <div class="names">Abee mah 💕 Preethi mah</div>
+      <button class="btn" onclick="startStory()">Start Our Story</button>
+    </div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bgMusic" loop>
+    <source src="audio/bgm.mp3" type="audio/mp3">
+  </audio>
+
+  <button class="music-btn" onclick="toggleMusic()">🎵</button>
+
+  <script>
+    // Redirect to next section/page
+    function startStory() {
+      window.location.href = "story.html"; // next page
+    }
+
+    // Music control
+    const music = document.getElementById("bgMusic");
+    let isPlaying = false;
+
+    function toggleMusic() {
+      if (isPlaying) {
+        music.pause();
+      } else {
+        music.play();
+      }
+      isPlaying = !isPlaying;
+    }
+
+    // Floating hearts generator
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.innerText = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+
+    setInterval(createHeart, 500);
+  </script>
+
+</body>
+</html>
