@@ -359,52 +359,27 @@ function addMessage(chat, msg){
     let audio=document.createElement("audio");
     audio.src=msg.audio;
 
-    let interval;
+    let wave=createWave();
 
-play.onclick = () => {
+    play.onclick=()=>{
+      audio.play();
+      play.innerHTML="⏸";
 
-  // ▶ PLAY
-  if (audio.paused) {
+      let bars=wave.querySelectorAll(".bar");
+      let i=0;
+      let interval=setInterval(()=>{
+        if(i<bars.length){
+          bars[i].classList.add("active");
+          i++;
+        }
+      },100);
 
-    audio.play();
-    play.innerHTML = "⏸";
-
-    let bars = wave.querySelectorAll(".bar");
-    let i = 0;
-
-    clearInterval(interval);
-
-    interval = setInterval(() => {
-      if (i < bars.length) {
-        bars[i].classList.add("active");
-        i++;
+      audio.onended=()=>{
+        play.innerHTML="▶";
+        bars.forEach(b=>b.classList.remove("active"));
+        clearInterval(interval);
       }
-    }, 100);
-
-  }
-
-  // ⏸ PAUSE
-  else {
-
-    audio.pause();
-    play.innerHTML = "▶";
-
-    clearInterval(interval);
-  }
-};
-
-// When voice finishes
-audio.onended = () => {
-
-  play.innerHTML = "▶";
-
-  clearInterval(interval);
-
-  let bars = wave.querySelectorAll(".bar");
-  bars.forEach(bar => {
-    bar.classList.remove("active");
-  });
-};
+    };
 
     voice.appendChild(wave);
     voice.appendChild(play);
@@ -467,4 +442,4 @@ setInterval(createHeart, 300);
 </script>
 
 </body>
-</html>
+</html> 
