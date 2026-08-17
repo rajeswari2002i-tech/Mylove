@@ -1038,15 +1038,33 @@ Voice Note 6
 </a>
 <script>
 function playVoice(btn){
-let audio=btn.nextElementSibling;
-if(audio.paused){
-audio.play();
-btn.innerHTML="⏸";
-}
-else{
-audio.pause();
-btn.innerHTML="▶";
-}
+
+  let allAudios = document.querySelectorAll("audio");
+  let allButtons = document.querySelectorAll(".play");
+
+  let currentAudio = btn.nextElementSibling;
+
+  // 🔴 Stop all other audios
+  allAudios.forEach(audio => {
+    if(audio !== currentAudio){
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
+
+  // 🔴 Reset all buttons
+  allButtons.forEach(b => {
+    b.innerHTML = "▶";
+  });
+
+  // ▶️ Play / Pause current
+  if(currentAudio.paused){
+    currentAudio.play();
+    btn.innerHTML = "⏸";
+  } else {
+    currentAudio.pause();
+    btn.innerHTML = "▶";
+  }
 }
 </script>
 <script>
