@@ -14,7 +14,6 @@ body {
   position: relative;
 }
 
-
 /* LIGHT EFFECT BG */
 body::before {
   content: "";
@@ -163,6 +162,7 @@ body::before {
   from {opacity:0; transform: translateY(10px);}
   to {opacity:1; transform: translateY(0);}
 }
+
 /* 💖 FLOATING CONTINUE BUTTON */
 .next-btn {
   position: fixed;
@@ -203,13 +203,14 @@ body::before {
 .next-btn {
   animation: floatBtn 2s infinite ease-in-out;
 }
+
 .chat {
   flex: 1;
   padding: 10px;
   overflow-y: auto;
 
   /* 🌸 CHAT WALLPAPER */
-  background-image: url("images/WhatsApp.jpeg"); /* your image path */
+  background-image: url("images/WhatsApp.jpeg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -223,7 +224,7 @@ body::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.4); /* adjust opacity */
+  background: rgba(255,255,255,0.4);
   z-index: 0;
 }
 
@@ -262,12 +263,14 @@ body::before {
   </div>
 
 </div>
+
 <!-- 💖 BUTTON -->
 <button class="next-btn" onclick="goNext()">Continue ➝ 💖</button>
 
 <script>
-  function goNext(){
-  window.location.href = "cartoon.html"; // change page name
+
+function goNext(){
+  window.location.href = "cartoon.html";
 }
 
 const chats = [
@@ -277,26 +280,36 @@ const chats = [
   document.getElementById("chat4")
 ];
 
+
+/* =========================================================
+   ALL AUDIO PLAYERS
+   ========================================================= */
+
+const allAudios = [];
+
+
 /* LEFT TEXT + RIGHT VOICE */
+
 const messages1 = [
   {type:"text", side:"left", text:" Abee mah enaku ethum kadha slu mah..un voice ah ketute thoonganum pola iruku mah..edhum slu pakalm 💬"},
   {type:"voice", side:"right", audio:"audio/audio1.mp3"},
-{type:"voice", side:"right", audio:"audio/audio2.mp3"},
-{type:"voice", side:"right", audio:"audio/audio3.mp3"},
-{type:"voice", side:"right", audio:"audio/audio4.mp3"},
-{type:"voice", side:"right", audio:"audio/audio5.mp3"},
-{type:"voice", side:"right", audio:"audio/audio6.mp3"},
-
+  {type:"voice", side:"right", audio:"audio/audio2.mp3"},
+  {type:"voice", side:"right", audio:"audio/audio3.mp3"},
+  {type:"voice", side:"right", audio:"audio/audio4.mp3"},
+  {type:"voice", side:"right", audio:"audio/audio5.mp3"},
+  {type:"voice", side:"right", audio:"audio/audio6.mp3"},
 
   {type:"text", side:"left", text:"Abee mah..Un voice ketta apdiyea beer adicha pola bothaiya iruka maari iruku"},
-   {type:"text", side:"left", text:"Story ah apdiyea imagine pani paathu athum un voice la ketkurapo mahhh 😍"},
-      {type:"text", side:"left", text:"Inaiku un voice semaiya Iruku abee mah enaku inum ketkanum polaiyea iruku..Na apdiyea ketutu un Mela paduthu apdiyea thoonguvn"},
+  {type:"text", side:"left", text:"Story ah apdiyea imagine pani paathu athum un voice la ketkurapo mahhh 😍"},
+  {type:"text", side:"left", text:"Inaiku un voice semaiya Iruku abee mah enaku inum ketkanum polaiyea iruku..Na apdiyea ketutu un Mela paduthu apdiyea thoonguvn"},
 
   {type:"voice", side:"right", audio:"audio/audio7.mp3"},
 
   {type:"text", side:"left", text:"Luv u sooo much en abee mahhh🤍🫂💋...ummaahhhhhh💋"},
   {type:"voice", side:"right", audio:"audio/audio8.mp3"}
 ];
+
+
 const messages2 = [
   {type:"text", side:"left", text:"Konjo neram matum voice panuviya un voice ketka asaiya iruk..Enak edhum voice panu mah atha sound ketutye thoongiren🤧"},
 
@@ -306,10 +319,12 @@ const messages2 = [
   {type:"voice", side:"right", audio:"audio/audio12.mp3"},
   {type:"voice", side:"right", audio:"audio/audio13.mp3"},
   {type:"voice", side:"right", audio:"audio/audio14.mp3"},
-  
+
   {type:"text", side:"left", text:"Okay preethi mah ketka axhaga iruku mah ellam..Luv u en chlm😌🤌🏻🫂💋🤍✨"},
   {type:"voice", side:"right", audio:"audio/audio15.mp3"},
 ];
+
+
 const messages3 = [
   {type:"text", side:"left", text:"Preethi mah..Un feel ah explain mah"},
   {type:"voice", side:"right", audio:"audio/audio16.mp3"},
@@ -318,128 +333,336 @@ const messages3 = [
   {type:"text", side:"left", text:"Luv u preethi mah 💋💋💋💋💋💋💋💋💋💋🤍🤌🏻🫂"},
   {type:"voice", side:"right", audio:"audio/audio19.mp3"},
 ];
-const messages4 = [
-  {type:"text", side:"left", text:"Ena epdi paathupa abee mah"},
-  {type:"voice", side:"right", audio:"audio/audio20.mp3"},
-  {type:"voice", side:"right", audio:"audio/audio21.mp3"},
-  
-  {type:"text", side:"left", text:"Alaga Iruku mah ne sluratha ketkurapo 💋🫂🤍😌✨una inum neraiya luv pananum abee mah enkita irukura motha luv um unaku kudukanum..Luv u abee mahh💋🫂🤍"},
-  {type:"voice", side:"right", audio:"audio/audio22.mp3"},
+
+
+const messages4 = [ 
+  {type:"text", side:"left", text:"Ena epdi paathupa abee mah"}, 
+  {type:"voice", side:"right", audio:"audio/audio21.mp3"}, 
+  {type:"voice", side:"right", audio:"audio/audio20.mp3"}, 
+  {type:"text", side:"left", text:"Alaga Iruku mah ne sluratha ketkurapo 💋🫂🤍😌✨una inum neraiya luv pananum abee mah enkita irukura motha luv um unaku kudukanum..Luv u abee mahh💋🫂🤍"}, {type:"voice", side:"right", audio:"audio/audio22.mp3"}, 
 ];
 
+
 /* WAVE */
+
 function createWave(){
+
   let wave = document.createElement("div");
+
   wave.className = "waveform";
+
   for(let i=0;i<20;i++){
-    let bar=document.createElement("div");
-    bar.className="bar";
+
+    let bar = document.createElement("div");
+
+    bar.className = "bar";
+
     wave.appendChild(bar);
   }
+
   return wave;
 }
 
-/* 💬 ADD MESSAGE */
-function addMessage(chat, msg){
-  let div=document.createElement("div");
-  div.className="msg "+msg.side;
 
-  if(msg.type==="text"){
+/* =========================================================
+   STOP OTHER AUDIO
+   ========================================================= */
+
+function stopOtherAudios(currentAudio){
+
+  allAudios.forEach(item => {
+
+    if(item.audio !== currentAudio){
+
+      item.audio.pause();
+
+      item.audio.currentTime = 0;
+
+      item.play.innerHTML = "▶";
+
+      clearInterval(item.interval);
+
+      item.i = 0;
+
+      item.bars.forEach(bar => {
+        bar.classList.remove("active");
+      });
+
+    }
+
+  });
+
+}
+
+
+/* 💬 ADD MESSAGE */
+
+function addMessage(chat, msg){
+
+  let div = document.createElement("div");
+
+  div.className = "msg " + msg.side;
+
+
+  if(msg.type === "text"){
+
     div.innerHTML = msg.text + '<div class="time">✓✓</div>';
+
   }
 
-  if(msg.type==="voice"){
-    let voice=document.createElement("div");
-    voice.className="voice";
 
-    let play=document.createElement("div");
-    play.className="play";
-    play.innerHTML="▶";
+  if(msg.type === "voice"){
 
-    let audio=document.createElement("audio");
-    audio.src=msg.audio;
+    let voice = document.createElement("div");
 
-    let wave=createWave();
+    voice.className = "voice";
 
-    play.onclick=()=>{
-      audio.play();
-      play.innerHTML="⏸";
 
-      let bars=wave.querySelectorAll(".bar");
-      let i=0;
-      let interval=setInterval(()=>{
-        if(i<bars.length){
-          bars[i].classList.add("active");
-          i++;
-        }
-      },100);
+    let play = document.createElement("div");
 
-      audio.onended=()=>{
-        play.innerHTML="▶";
-        bars.forEach(b=>b.classList.remove("active"));
-        clearInterval(interval);
-      }
+    play.className = "play";
+
+    play.innerHTML = "▶";
+
+
+    let audio = document.createElement("audio");
+
+    audio.src = msg.audio;
+
+
+    let wave = createWave();
+
+    let bars = wave.querySelectorAll(".bar");
+
+    let interval = null;
+
+    let i = 0;
+
+
+    /* Store this audio */
+
+    const audioObject = {
+      audio: audio,
+      play: play,
+      interval: interval,
+      i: i,
+      bars: bars
     };
 
+    allAudios.push(audioObject);
+
+
+    /* =====================================================
+       PLAY / PAUSE / RESUME
+       ===================================================== */
+
+    play.onclick = () => {
+
+
+      /* ---------------------------------------------
+         IF AUDIO IS CURRENTLY PLAYING
+         --------------------------------------------- */
+
+      if(!audio.paused){
+
+        audio.pause();
+
+        play.innerHTML = "▶";
+
+        clearInterval(audioObject.interval);
+
+        return;
+
+      }
+
+
+      /* ---------------------------------------------
+         STOP ALL OTHER AUDIO
+         --------------------------------------------- */
+
+      stopOtherAudios(audio);
+
+
+      /* ---------------------------------------------
+         PLAY CURRENT AUDIO
+         --------------------------------------------- */
+
+      audio.play();
+
+      play.innerHTML = "⏸";
+
+
+      /* Start waveform */
+
+      clearInterval(audioObject.interval);
+
+      audioObject.interval = setInterval(() => {
+
+        if(audioObject.i < bars.length){
+
+          bars[audioObject.i].classList.add("active");
+
+          audioObject.i++;
+
+        }
+        else{
+
+          audioObject.i = 0;
+
+          bars.forEach(bar => {
+            bar.classList.remove("active");
+          });
+
+        }
+
+      },100);
+
+    };
+
+
+    /* =====================================================
+       AUDIO FINISHED
+       ===================================================== */
+
+    audio.onended = () => {
+
+      play.innerHTML = "▶";
+
+      clearInterval(audioObject.interval);
+
+      audioObject.interval = null;
+
+      audioObject.i = 0;
+
+      bars.forEach(bar => {
+        bar.classList.remove("active");
+      });
+
+    };
+
+
+    /* =====================================================
+       AUDIO ERROR
+       ===================================================== */
+
+    audio.onerror = () => {
+
+      play.innerHTML = "▶";
+
+      clearInterval(audioObject.interval);
+
+      console.log("Audio could not be loaded:", msg.audio);
+
+    };
+
+
     voice.appendChild(wave);
+
     voice.appendChild(play);
 
     div.appendChild(voice);
+
     div.appendChild(audio);
+
   }
 
-  div.ondblclick=()=>react(div);
+
+  div.ondblclick = () => react(div);
+
 
   chat.appendChild(div);
+
   chat.scrollTop = chat.scrollHeight;
+
 }
+
 
 /* ❤️ REACTION */
+
 function react(el){
+
   if(!el.querySelector(".react-heart")){
-    let h=document.createElement("div");
-    h.className="react-heart";
-    h.innerHTML="❤️";
+
+    let h = document.createElement("div");
+
+    h.className = "react-heart";
+
+    h.innerHTML = "❤️";
+
     el.appendChild(h);
+
   }
+
 }
+
 
 /* 💖 AUTO FLOW FOR EACH CHAT */
+
 function runChat(chat, messages, delay){
-  let i=0;
+
+  let i = 0;
+
   function next(){
+
     if(i < messages.length){
+
       addMessage(chat, messages[i]);
+
       i++;
+
       setTimeout(next, delay);
+
     }
+
   }
+
   next();
+
 }
+
 
 /* ▶ START ALL CHATS */
+
 runChat(chat1, messages1, 2000);
+
 runChat(chat2, messages2, 2500);
+
 runChat(chat3, messages3, 3000);
+
 runChat(chat4, messages4, 3000);
+
+
 /* 💕 FLOAT HEARTS */
+
 const hearts = document.querySelector(".hearts");
 
-function createHeart() {
+
+function createHeart(){
+
   const heart = document.createElement("div");
+
   heart.className = "bg-heart";
+
   heart.innerHTML = "💖";
 
+
   heart.style.left = Math.random() * 100 + "vw";
+
   heart.style.fontSize = (12 + Math.random() * 25) + "px";
+
   heart.style.animationDuration = (4 + Math.random() * 4) + "s";
 
+
   hearts.appendChild(heart);
+
   setTimeout(() => heart.remove(), 8000);
+
 }
 
+
 setInterval(createHeart, 300);
+
 </script>
 
 </body>
-</html> 
+</html>
