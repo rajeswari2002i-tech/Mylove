@@ -563,51 +563,64 @@ right:35%;
     right:25px;
 }
 
+/* ================= MOBILE FRIENDLY FIX ================= */
 
-/* ================= MOBILE ================= */
+@media (max-width: 768px) {
 
-@media(max-width:700px){
+  /* CHAT BOXES */
+  .float-message {
+    font-size: 12px;
+    padding: 10px 14px;
+    max-width: 200px;
+    border-radius: 18px;
+  }
 
-    .memory-carousel{
-        height:480px;
-    }
+  /* VOICE NOTE BOXES */
+  .float-voice {
+    padding: 10px 14px;
+    gap: 8px;
+    border-radius: 30px;
+    backdrop-filter: blur(8px);
+  }
 
-    .memory-card.center{
-        width:240px;
-        height:350px;
-    }
+  /* TEXT INSIDE VOICE */
+  .voice-text {
+    font-size: 12px;
+  }
 
-    .memory-card.left{
-        transform:
-            translate(-220px,-50%)
-            scale(.65);
+  /* PLAY BUTTON */
+  .play {
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+  }
 
-        opacity:.3;
-    }
-
-    .memory-card.right{
-        transform:
-            translate(100px,-50%)
-            scale(.65);
-
-        opacity:.3;
-    }
-
-    .memory-arrow{
-        width:45px;
-        height:45px;
-        font-size:28px;
-    }
-
-    .memory-arrow.left{
-        left:10px;
-    }
-
-    .memory-arrow.right{
-        right:10px;
-    }
-
+  /* OPTIONAL: prevent overflow on small screens */
+  body {
+    overflow-x: hidden;
+  }
 }
+
+/* EXTRA SMALL DEVICES */
+@media (max-width: 480px) {
+
+  .float-message {
+    font-size: 11px;
+    max-width: 170px;
+    padding: 8px 12px;
+  }
+
+  .voice-text {
+    font-size: 11px;
+  }
+
+  .play {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+}
+
 
 </style>
 

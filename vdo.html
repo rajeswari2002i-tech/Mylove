@@ -199,7 +199,34 @@ video:hover {
   transform: scale(1.1);
   box-shadow: 0 8px 25px rgba(255, 77, 109, 0.6);
 }
+/* ================= FIX HORIZONTAL SCROLL ISSUE ================= */
 
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Prevent flex items from forcing overflow */
+.row {
+  max-width: 100%;
+}
+
+/* CONTENT SAFE WIDTH */
+.content {
+  min-width: 0;
+}
+
+/* FIX NEON BORDER OVERFLOW */
+body::before {
+  max-width: 100vw;
+  max-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* SAFETY FOR ANY WIDE ELEMENTS */
+img, video {
+  max-width: 100%;
+}
 </style>
 </head>
 

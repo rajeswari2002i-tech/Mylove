@@ -187,7 +187,39 @@ p {
   50%{ transform: scale(1.15); }
   100%{ transform: scale(1); }
 }
+/* ================= MOBILE CAROUSEL FIX ================= */
+@media (max-width: 768px) {
 
+  .carousel {
+    width: 100%;
+    margin: 30px auto;
+    border-radius: 15px;
+  }
+
+  .slide {
+    height: 300px; /* smaller height for mobile */
+  }
+
+  .slide img,
+  .slide video {
+    object-fit: cover;
+  }
+
+  /* Bigger touch buttons */
+  .carousel-btn {
+    font-size: 24px;
+    padding: 12px;
+    background: rgba(0,0,0,0.4);
+  }
+
+  .prev { left: 5px; }
+  .next { right: 5px; }
+
+}
+.slide {
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
 </style>
 </head>
 
