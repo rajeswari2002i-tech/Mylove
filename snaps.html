@@ -566,18 +566,56 @@ right:35%;
     overflow-x: hidden;
   }
 
- @media (max-width: 768px) {
+  
+@media (max-width: 768px){
 
-  .float-message,
-  .float-voice {
-    position: static !important;   /* 🔥 THIS FIXES EVERYTHING */
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
+  .memory-space{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px 10px 80px;
   }
 
-}   
+
+
+  /* ALIGNMENT */
+  .float-message{
+    align-self: flex-start;
+    background: white;
+    color: #333;
+    padding: 10px 14px;
+    border-radius: 15px;
+    font-size: 13px;
+  }
+
+  .float-voice{
+    align-self: flex-end;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 20px;
+  }
+
+  /* 🔥 FORCE ORDER (THIS IS THE MAGIC) */
+
+  .m1{ order: 1; }
+  .v1{ order: 2; }
+
+  .m3{ order: 3; }
+  .v2{ order: 4; }
+
+  .m4{ order: 5; }
+  .v3{ order: 6; }
+
+  .m5{ order: 7; }
+  .v4{ order: 8; }
+
+  .v5{ order: 9; }
+  .v6{ order: 10; }
+
+}
 /* LEFT MESSAGE */
 .float-message{
   background: #ffffff;
@@ -646,20 +684,7 @@ right:35%;
     font-size: 30px;
   }
 
-  /* ================= CLEAN CHAT + VOICE FEED ================= */
-
-  @media (max-width: 768px) {
-
-  .float-message,
-  .float-voice {
-    position: static !important;   /* 🔥 THIS FIXES EVERYTHING */
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-  }
-
-}
+ 
 /* LEFT MESSAGE */
 .float-message{
   background: #ffffff;
