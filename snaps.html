@@ -12,6 +12,10 @@
 *{
 box-sizing:border-box;
 }
+html, body{
+  max-width:100%;
+  overflow-x:hidden;
+}   
 body{
 
 margin:0;
@@ -126,13 +130,20 @@ z-index:10;
 
 }
 
-
+.center-love{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;              /* reduce space between */
+    width:100%;
+    flex-wrap:nowrap;     /* keep in one line */
+  }
 
 .person{
 
-width:230px;
-
-height:300px;
+ width:130px;          /* smaller size */
+    height:170px;
+    border-width:3px;
 
 border-radius:50%;
 
@@ -149,7 +160,7 @@ box-shadow:
 
 .heart{
 
-font-size:55px;
+font-size:28px; 
 
 animation:pulse 1.5s infinite;
 
