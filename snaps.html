@@ -566,14 +566,69 @@ right:35%;
     overflow-x: hidden;
   }
 
+ @media (max-width: 768px) {
+
+  .float-message,
+  .float-voice {
+    position: static !important;   /* 🔥 THIS FIXES EVERYTHING */
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+  }
+
+}   
+/* LEFT MESSAGE */
+.float-message{
+  background: #ffffff;
+  color: #333;
+  text-align: left;
+}
+
+/* RIGHT VOICE */
+.float-voice{
+  margin-left: auto;
+  justify-content: flex-end;
+}
+@media (max-width: 768px) {
+
   .memory-space{
-    height: auto;
-    padding: 20px 10px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
+  .float-message,
+  .float-voice{
+    width: 90%;
+    max-width: 340px;
+    margin: 6px 0;
+  }
+
+  /* Chat bubble */
+  .float-message{
+    padding: 10px 14px;
+    border-radius: 15px;
+    font-size: 13px;
+  }
+
+  /* Voice bubble */
+  .float-voice{
+    padding: 8px 12px;
+    border-radius: 20px;
+  }
+
+  .play{
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  .voice-text{
+    font-size: 12px;
+  }
+
+}
   /* AVATARS */
   .center-love{
     position: relative;
@@ -593,13 +648,30 @@ right:35%;
 
   /* ================= CLEAN CHAT + VOICE FEED ================= */
 
+  @media (max-width: 768px) {
+
   .float-message,
-  .float-voice{
-    position: relative !important;
-    width: 85%;
-    max-width: 320px;
-    margin: 8px auto;
+  .float-voice {
+    position: static !important;   /* 🔥 THIS FIXES EVERYTHING */
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
   }
+
+}
+/* LEFT MESSAGE */
+.float-message{
+  background: #ffffff;
+  color: #333;
+  text-align: left;
+}
+
+/* RIGHT VOICE */
+.float-voice{
+  margin-left: auto;
+  justify-content: flex-end;
+}
 
   /* CHAT BOX (SMALL + CLEAN) */
   .float-message{
