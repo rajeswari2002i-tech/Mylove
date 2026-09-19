@@ -561,240 +561,61 @@ right:35%;
     right:25px;
 }
 @media (max-width: 768px) {
+.memory-space{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  height:auto;
+  padding:20px 10px 100px;
+}
 
-  html, body{
-    overflow-x: hidden;
-  }
+.float-message,
+.float-voice,
+.center-love{
+  position:relative !important;
+  top:auto !important;
+  left:auto !important;
+  right:auto !important;
+  bottom:auto !important;
+  transform:none !important;
+}
 
+.float-message,
+.float-voice{
+  width:90%;
+  max-width:340px;
+  margin:6px 0;
+}
+
+.float-message{
+  align-self:flex-start;
+}
+
+.float-voice{
+  align-self:flex-end;
+}
   
-@media (max-width: 768px){
 
-  .memory-space{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: auto;
-    padding: 20px 10px 80px;
-  }
+.m1{ order:1; }
+.v1{ order:2; }
 
-@media (max-width: 768px){
+.m3{ order:3; }
+.v2{ order:4; }
 
-  /* CONTAINER FIX */
-  .memory-space{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-    height:auto;
-    padding:20px 10px 100px;
-  }
+.m4{ order:5; }
+.v3{ order:6; }
 
-  /* 🔥 REMOVE ABSOLUTE POSITIONING */
-  .float-message,
-  .float-voice,
-  .center-love{
-    position:relative !important;
-    top:auto !important;
-    left:auto !important;
-    right:auto !important;
-    bottom:auto !important;
-    transform:none !important;
-  }
+.m5{ order:7; }
+.v4{ order:8; }
 
-  /* FIX AVATAR (TOP IMAGE) */
-  .center-love{
-    order:0;
-    margin:20px 0;
-    z-index:1;
-  }
-
-  .person{
-    width:120px;
-    height:150px;
-  }
-
-  .heart{
-    font-size:30px;
-  }
-
-  /* COMMON BOX STYLE */
-  .float-message,
-  .float-voice{
-    width:90%;
-    max-width:340px;
-    margin:6px 0;
-  }
-
-  /* LEFT CHAT */
-  .float-message{
-    align-self:flex-start;
-    background:#fff;
-    color:#333;
-    padding:10px 14px;
-    border-radius:15px;
-    font-size:13px;
-  }
-
-  /* RIGHT VOICE */
-  .float-voice{
-    align-self:flex-end;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    padding:8px 12px;
-    border-radius:20px;
-  }
-
-  .play{
-    width:30px;
-    height:30px;
-    font-size:12px;
-  }
-
-  .voice-text{
-    font-size:12px;
-  }
-
-  /* 🔥 PERFECT ORDER (CHAT → VOICE) */
-  .m1{ order:1; }
-  .v1{ order:2; }
-
-  .m3{ order:3; }
-  .v2{ order:4; }
-
-  .m4{ order:5; }
-  .v3{ order:6; }
-
-  .m5{ order:7; }
-  .v4{ order:8; }
-
-  .v5{ order:9; }
-  .v6{ order:10; }
-
+.v5{ order:9; }
+.v6{ order:10; }
+.center-love{
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
-  /* ALIGNMENT */
-  .float-message{
-    align-self: flex-start;
-    background: white;
-    color: #333;
-    padding: 10px 14px;
-    border-radius: 15px;
-    font-size: 13px;
-  }
-
-  .float-voice{
-    align-self: flex-end;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 20px;
-  }
-
-  /* 🔥 FORCE ORDER (THIS IS THE MAGIC) */
-
-  .m1{ order: 1; }
-  .v1{ order: 2; }
-
-  .m3{ order: 3; }
-  .v2{ order: 4; }
-
-  .m4{ order: 5; }
-  .v3{ order: 6; }
-
-  .m5{ order: 7; }
-  .v4{ order: 8; }
-
-  .v5{ order: 9; }
-  .v6{ order: 10; }
-
-}
-
-
-@media (max-width: 768px) {
-
-  .memory-space{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-
-
-  /* Chat bubble */
-  .float-message{
-    padding: 10px 14px;
-    border-radius: 15px;
-    font-size: 13px;
-  }
-
-  /* Voice bubble */
-  .float-voice{
-    padding: 8px 12px;
-    border-radius: 20px;
-  }
-
-  .play{
-    width: 32px;
-    height: 32px;
-    font-size: 13px;
-  }
-
-  .voice-text{
-    font-size: 12px;
-  }
-
-}
-  /* AVATARS */
-  .center-love{
-    position: relative;
-    transform: none;
-    margin: 20px 0;
-    gap: 10px;
-  }
-
-  .person{
-    width: 120px;
-    height: 150px;
-  }
-
-  .heart{
-    font-size: 30px;
-  }
-
- 
-
-
-
-
-  /* CHAT BOX (SMALL + CLEAN) */
-  .float-message{
-    padding: 10px 12px;
-    font-size: 12px;
-    border-radius: 12px;
-    text-align: center;
-    line-height: 1.4;
-  }
-
-  /* VOICE BOX (SMALL + CLEAN) */
-  .float-voice{
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    padding: 8px 10px;
-    border-radius: 16px;
-    gap: 8px;
-  }
-
-  .voice-text{
-    font-size: 11px;
-  }
-
-  .play{
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
-  }
 
   /* MAKE SURE NO OVERFLOW */
   .memory-carousel{
@@ -1283,60 +1104,34 @@ let currentMemory = 0;
 
 function showMemory(){
 
-    const total =
-        memoryCards.length;
-
+    const total = memoryCards.length;
 
     memoryCards.forEach((card,index)=>{
 
+        // 🔴 STOP VIDEOS
+        let video = card.querySelector("video");
+        if(video){
+            video.pause();
+            video.currentTime = 0;
+        }
+
         card.className = "memory-card";
 
-
-        /* CENTER */
-
         if(index === currentMemory){
-
             card.classList.add("center");
-
         }
-
-
-        /* LEFT */
-
-        else if(
-            index ===
-            (currentMemory - 1 + total) % total
-        ){
-
+        else if(index === (currentMemory - 1 + total) % total){
             card.classList.add("left");
-
         }
-
-
-        /* RIGHT */
-
-        else if(
-            index ===
-            (currentMemory + 1) % total
-        ){
-
+        else if(index === (currentMemory + 1) % total){
             card.classList.add("right");
-
         }
-
-
-        /* HIDDEN */
-
         else{
-
             card.classList.add("hidden");
-
         }
 
     });
-
 }
-
 
 function nextMemory(){
 
