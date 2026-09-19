@@ -577,7 +577,100 @@ right:35%;
     padding: 20px 10px 80px;
   }
 
+@media (max-width: 768px){
 
+  /* CONTAINER FIX */
+  .memory-space{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:auto;
+    padding:20px 10px 100px;
+  }
+
+  /* 🔥 REMOVE ABSOLUTE POSITIONING */
+  .float-message,
+  .float-voice,
+  .center-love{
+    position:relative !important;
+    top:auto !important;
+    left:auto !important;
+    right:auto !important;
+    bottom:auto !important;
+    transform:none !important;
+  }
+
+  /* FIX AVATAR (TOP IMAGE) */
+  .center-love{
+    order:0;
+    margin:20px 0;
+    z-index:1;
+  }
+
+  .person{
+    width:120px;
+    height:150px;
+  }
+
+  .heart{
+    font-size:30px;
+  }
+
+  /* COMMON BOX STYLE */
+  .float-message,
+  .float-voice{
+    width:90%;
+    max-width:340px;
+    margin:6px 0;
+  }
+
+  /* LEFT CHAT */
+  .float-message{
+    align-self:flex-start;
+    background:#fff;
+    color:#333;
+    padding:10px 14px;
+    border-radius:15px;
+    font-size:13px;
+  }
+
+  /* RIGHT VOICE */
+  .float-voice{
+    align-self:flex-end;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border-radius:20px;
+  }
+
+  .play{
+    width:30px;
+    height:30px;
+    font-size:12px;
+  }
+
+  .voice-text{
+    font-size:12px;
+  }
+
+  /* 🔥 PERFECT ORDER (CHAT → VOICE) */
+  .m1{ order:1; }
+  .v1{ order:2; }
+
+  .m3{ order:3; }
+  .v2{ order:4; }
+
+  .m4{ order:5; }
+  .v3{ order:6; }
+
+  .m5{ order:7; }
+  .v4{ order:8; }
+
+  .v5{ order:9; }
+  .v6{ order:10; }
+
+}
 
   /* ALIGNMENT */
   .float-message{
@@ -616,18 +709,8 @@ right:35%;
   .v6{ order: 10; }
 
 }
-/* LEFT MESSAGE */
-.float-message{
-  background: #ffffff;
-  color: #333;
-  text-align: left;
-}
 
-/* RIGHT VOICE */
-.float-voice{
-  margin-left: auto;
-  justify-content: flex-end;
-}
+
 @media (max-width: 768px) {
 
   .memory-space{
@@ -636,12 +719,7 @@ right:35%;
     align-items: center;
   }
 
-  .float-message,
-  .float-voice{
-    width: 90%;
-    max-width: 340px;
-    margin: 6px 0;
-  }
+
 
   /* Chat bubble */
   .float-message{
@@ -685,18 +763,9 @@ right:35%;
   }
 
  
-/* LEFT MESSAGE */
-.float-message{
-  background: #ffffff;
-  color: #333;
-  text-align: left;
-}
 
-/* RIGHT VOICE */
-.float-voice{
-  margin-left: auto;
-  justify-content: flex-end;
-}
+
+
 
   /* CHAT BOX (SMALL + CLEAN) */
   .float-message{
