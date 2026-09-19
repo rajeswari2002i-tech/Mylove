@@ -26,13 +26,23 @@ body {
     width: 95%;
     max-width: 400px;
     height: auto;          /* ✅ change this */
-    min-height: 80vh;  
+    min-height: 70vh;  
   }
 
 }
 .app {
-  height: 80vh;
+  width: 320px;
+  min-height: 500px;
+  height: auto;
+  background: #e5ddd5;
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
+.apps-wrapper {
+  padding-bottom: 120px;
+} 
 .apps-wrapper {
   gap: 15px;
   padding: 15px;
@@ -83,7 +93,8 @@ body::before {
 /* APP */
 .app {
   width: 320px;
-  height: 90vh;
+   min-height: 500px;   /* ✅ keeps design nice */
+  height: auto; 
   background: #e5ddd5;
   border-radius: 20px;
   overflow: hidden;
